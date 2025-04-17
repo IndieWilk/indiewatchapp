@@ -25,14 +25,14 @@ const mockResults: SearchResult[] = [
     category: 'shop', 
     title: 'Baltic Aquascaphe', 
     description: 'Vintage-inspired dive watch',
-    link: '/shop' 
+    link: '/shop/baltic' 
   },
   { 
     id: '2', 
     category: 'shop', 
     title: 'Lorier Neptune', 
     description: 'Modern tool watch',
-    link: '/shop' 
+    link: '/shop/lorier' 
   },
   { 
     id: '3', 

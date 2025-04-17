@@ -1,10 +1,12 @@
-
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Newspaper, MessageSquare } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 
 interface Brand {
@@ -148,6 +150,21 @@ const BrandPage = () => {
             
             <div className="prose dark:prose-invert">
               <p className="text-muted-foreground">{brand.description}</p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="outline" className="flex items-center gap-2" asChild>
+                <Link to={`/content?brand=${brand.name}`}>
+                  <Newspaper className="h-4 w-4" />
+                  News about {brand.name}
+                </Link>
+              </Button>
+              <Button variant="outline" className="flex items-center gap-2" asChild>
+                <Link to={`/community?brand=${brand.name}`}>
+                  <MessageSquare className="h-4 w-4" />
+                  What the Community are saying
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
@@ -161,6 +160,7 @@ const Community = () => {
               <CardContent className="p-4">
                 <h3 className="font-medium mb-4">Community Guidelines</h3>
                 <ul className="text-sm space-y-2 text-muted-foreground">
+                  <li>Focus on independent watch brands only</li>
                   <li>Be respectful to other members</li>
                   <li>No counterfeit watch discussion</li>
                   <li>No buying/selling in the main forum</li>

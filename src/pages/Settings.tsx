@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,14 +17,14 @@ const Settings = () => {
   const spinTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const prizes = [
-    "10% Discount",
-    "Free Shipping",
-    "Watch Strap",
-    "Try Again",
-    "Watch Winder",
-    "5% Discount",
-    "Watch Tool Kit",
-    "Mystery Gift"
+    "Winner: Watch Tool Kit",
+    "Unlucky: Try Again",
+    "Winner: 10% Discount",
+    "Unlucky: No Prize",
+    "Winner: Free Shipping",
+    "Unlucky: Better Luck Next Time",
+    "Winner: Mystery Gift",
+    "Unlucky: No Reward"
   ];
 
   const spinWheel = () => {

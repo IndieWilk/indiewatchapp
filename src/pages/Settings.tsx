@@ -1,3 +1,4 @@
+
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,10 +24,16 @@ const Settings = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center justify-center text-center p-12">
-              <h2 className="text-2xl font-semibold text-muted-foreground">Coming Soon!</h2>
-              <p className="mt-4 text-sm text-muted-foreground">
-                We're working on an exciting new feature. Stay tuned!
+              <div className="w-64 h-64 rounded-full border-4 border-primary-400 flex items-center justify-center mb-6">
+                <div className="text-center px-8">
+                  <Gift className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <p className="font-medium">Spin The Wheel</p>
+                </div>
+              </div>
+              <p className="mt-4 text-base text-muted-foreground max-w-md">
+                Each month, three lucky watch geeks can win a watch from one of our partners. Spin to play!
               </p>
+              <Button className="mt-6">Spin Now</Button>
             </CardContent>
           </Card>
           

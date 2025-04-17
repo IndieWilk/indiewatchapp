@@ -1,13 +1,18 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Users, Newspaper, Settings } from 'lucide-react';
+import { Home, ShoppingBag, Users, Newspaper, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const BottomNav = () => {
   const location = useLocation();
   
   const navItems = [
+    {
+      name: 'Discover',
+      icon: Home,
+      path: '/',
+    },
     {
       name: 'Shop',
       icon: ShoppingBag,
@@ -34,7 +39,7 @@ const BottomNav = () => {
     <nav className="fixed bottom-0 left-0 right-0 border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div className="flex justify-around items-center h-16">
         {navItems.map((item) => {
-          const isActive = location.pathname === item.path || (location.pathname === '/' && item.path === '/shop');
+          const isActive = location.pathname === item.path;
           return (
             <Link
               key={item.name}

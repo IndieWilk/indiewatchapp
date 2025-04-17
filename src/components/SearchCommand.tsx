@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   CommandDialog,
   CommandInput,
+  CommandList,
+  CommandEmpty,
 } from "@/components/ui/command";
 import { Search } from 'lucide-react';
 
@@ -73,6 +76,9 @@ export function SearchCommand() {
           value={searchQuery}
           onValueChange={handleSearch}
         />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+        </CommandList>
       </CommandDialog>
     </>
   );

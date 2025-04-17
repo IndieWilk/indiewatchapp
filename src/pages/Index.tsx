@@ -3,7 +3,16 @@ import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
-import { ChevronRight, Clock, MessageSquare, ShoppingBag } from 'lucide-react';
+import { 
+  ChevronRight, 
+  Clock, 
+  MessageSquare, 
+  ShoppingBag, 
+  Watch, 
+  Stopwatch, 
+  TimerReset, 
+  Gauge 
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import User from '@/components/User';
 
@@ -124,13 +133,26 @@ const Index = () => {
       
       <section className="py-16 px-4 md:py-24 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
-          <Logo className="mx-auto mb-6 w-16 h-16 md:w-24 md:h-24" />
+          <div className="flex justify-center items-center mb-6 relative">
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
+              <Watch className="text-primary/50 w-10 h-10 animate-pulse" />
+              <Stopwatch className="text-primary/50 w-10 h-10 animate-pulse delay-300" />
+            </div>
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
+              <TimerReset className="text-primary/50 w-10 h-10 animate-pulse delay-150" />
+              <Gauge className="text-primary/50 w-10 h-10 animate-pulse" />
+            </div>
+            <Logo className="mx-auto w-16 h-16 md:w-24 md:h-24" />
+          </div>
+          
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
             IndieWatch
           </h1>
+          
           <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
             The all-in-one app for watch lovers, learn more and support the worlds best independently ran watch brands.
           </p>
+          
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
               <ShoppingBag className="mr-2 h-5 w-5" /> Shop Watches

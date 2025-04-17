@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
@@ -26,80 +25,60 @@ const BRANDS = [
     name: "Baltic", 
     icon: Watch, 
     color: "bg-primary/10",
-    country: "France",
-    style: "Dive",
-    priceRange: "Mid-range"
+    country: "France"
   },
   { 
     name: "Brew", 
     icon: Clock, 
     color: "bg-primary-300/20",
-    country: "USA",
-    style: "Chronograph",
-    priceRange: "Mid-range"
+    country: "USA"
   },
   { 
     name: "Farer", 
     icon: Compass, 
     color: "bg-primary-500/20",
-    country: "UK",
-    style: "GMT",
-    priceRange: "Mid-range"
+    country: "UK"
   },
   { 
     name: "Halios", 
     icon: Timer, 
     color: "bg-primary-400/20",
-    country: "Canada",
-    style: "Dive",
-    priceRange: "Mid-range"
+    country: "Canada"
   },
   { 
     name: "Lorier", 
     icon: Award, 
     color: "bg-primary-200/20",
-    country: "USA",
-    style: "Field",
-    priceRange: "Affordable"
+    country: "USA"
   },
   { 
     name: "Monta", 
     icon: LayoutGrid, 
     color: "bg-primary-600/20",
-    country: "USA",
-    style: "Sports",
-    priceRange: "Premium"
+    country: "USA"
   },
   { 
     name: "Autodromo", 
     icon: Watch, 
     color: "bg-primary/10",
-    country: "USA",
-    style: "Racing",
-    priceRange: "Premium"
+    country: "USA"
   },
   { 
     name: "Kurono", 
     icon: Clock, 
     color: "bg-primary-300/20",
-    country: "Japan",
-    style: "Dress",
-    priceRange: "Premium"
+    country: "Japan"
   },
   { 
     name: "Anordain", 
     icon: Compass, 
     color: "bg-primary-500/20",
-    country: "UK",
-    style: "Dress",
-    priceRange: "Premium"
+    country: "UK"
   }
 ];
 
-// Extract unique filter options
+// Remove style from filter options
 const COUNTRIES = Array.from(new Set(BRANDS.map(brand => brand.country)));
-const STYLES = Array.from(new Set(BRANDS.map(brand => brand.style)));
-const PRICE_RANGES = Array.from(new Set(BRANDS.map(brand => brand.priceRange)));
 
 const BrandSquare = ({ brand }: { brand: typeof BRANDS[0] }) => {
   const Icon = brand.icon;
@@ -111,7 +90,6 @@ const BrandSquare = ({ brand }: { brand: typeof BRANDS[0] }) => {
           <Icon className="h-8 w-8 text-primary" />
         </div>
         <h3 className="font-medium text-lg">{brand.name}</h3>
-        <Badge variant="outline" className="mt-2 bg-background/50">{brand.style}</Badge>
         <Badge variant="secondary" className="mt-1 text-xs">{brand.country}</Badge>
       </CardContent>
     </Card>
@@ -157,39 +135,17 @@ const Shop = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
-  const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
-  const [selectedPriceRanges, setSelectedPriceRanges] = useState<string[]>([]);
   
-  const toggleFilter = (type: 'country' | 'style' | 'price', option: string) => {
-    switch (type) {
-      case 'country':
-        setSelectedCountries(prev => 
-          prev.includes(option) 
-            ? prev.filter(item => item !== option) 
-            : [...prev, option]
-        );
-        break;
-      case 'style':
-        setSelectedStyles(prev => 
-          prev.includes(option) 
-            ? prev.filter(item => item !== option) 
-            : [...prev, option]
-        );
-        break;
-      case 'price':
-        setSelectedPriceRanges(prev => 
-          prev.includes(option) 
-            ? prev.filter(item => item !== option) 
-            : [...prev, option]
-        );
-        break;
-    }
+  const toggleFilter = (option: string) => {
+    setSelectedCountries(prev => 
+      prev.includes(option) 
+        ? prev.filter(item => item !== option) 
+        : [...prev, option]
+    );
   };
   
   const clearAllFilters = () => {
     setSelectedCountries([]);
-    setSelectedStyles([]);
-    setSelectedPriceRanges([]);
   };
   
   const filteredBrands = BRANDS.filter(brand => {
@@ -203,20 +159,10 @@ const Shop = () => {
       selectedCountries.length === 0 || 
       selectedCountries.includes(brand.country);
     
-    // Filter by selected styles
-    const matchesStyle = 
-      selectedStyles.length === 0 || 
-      selectedStyles.includes(brand.style);
-    
-    // Filter by selected price ranges
-    const matchesPriceRange = 
-      selectedPriceRanges.length === 0 || 
-      selectedPriceRanges.includes(brand.priceRange);
-    
-    return matchesSearch && matchesCountry && matchesStyle && matchesPriceRange;
+    return matchesSearch && matchesCountry;
   });
   
-  const activeFilterCount = selectedCountries.length + selectedStyles.length + selectedPriceRanges.length;
+  const activeFilterCount = selectedCountries.length;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -266,21 +212,7 @@ const Shop = () => {
                   title="Country" 
                   options={COUNTRIES} 
                   selectedFilters={selectedCountries}
-                  onFilterChange={(option) => toggleFilter('country', option)}
-                />
-                
-                <FilterSection 
-                  title="Style" 
-                  options={STYLES} 
-                  selectedFilters={selectedStyles}
-                  onFilterChange={(option) => toggleFilter('style', option)}
-                />
-                
-                <FilterSection 
-                  title="Price Range" 
-                  options={PRICE_RANGES} 
-                  selectedFilters={selectedPriceRanges}
-                  onFilterChange={(option) => toggleFilter('price', option)}
+                  onFilterChange={toggleFilter}
                 />
               </PopoverContent>
             </Popover>

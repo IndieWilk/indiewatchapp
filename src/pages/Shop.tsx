@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,7 +5,19 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { ChevronDown, Filter, Search, SlidersHorizontal } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { 
+  ChevronDown, 
+  Filter, 
+  Search, 
+  SlidersHorizontal, 
+  Watch, 
+  Clock, 
+  Timer, 
+  Award, 
+  Compass, 
+  LayoutGrid
+} from 'lucide-react';
 
 const WATCHES = [
   {
@@ -59,7 +70,18 @@ const WATCHES = [
   },
 ];
 
-const BRANDS = ["All Brands", "Baltic", "Brew", "Farer", "Halios", "Lorier", "Monta"];
+const BRANDS = [
+  { name: "Baltic", icon: Watch, color: "bg-primary/10" },
+  { name: "Brew", icon: Clock, color: "bg-primary-300/20" },
+  { name: "Farer", icon: Compass, color: "bg-primary-500/20" },
+  { name: "Halios", icon: Timer, color: "bg-primary-400/20" },
+  { name: "Lorier", icon: Award, color: "bg-primary-200/20" },
+  { name: "Monta", icon: LayoutGrid, color: "bg-primary-600/20" },
+  { name: "Autodromo", icon: Watch, color: "bg-primary/10" },
+  { name: "Kurono", icon: Clock, color: "bg-primary-300/20" },
+  { name: "Anordain", icon: Compass, color: "bg-primary-500/20" }
+];
+
 const PRICE_RANGES = ["All Prices", "Under $500", "$500-$1000", "$1000-$2000", "Over $2000"];
 
 const ProductCard = ({ watch }: { watch: typeof WATCHES[0] }) => (
@@ -86,10 +108,27 @@ const ProductCard = ({ watch }: { watch: typeof WATCHES[0] }) => (
   </Card>
 );
 
+const BrandSquare = ({ brand }: { brand: typeof BRANDS[0] }) => {
+  const Icon = brand.icon;
+  
+  return (
+    <Card className="aspect-square overflow-hidden transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50 group cursor-pointer">
+      <CardContent className="p-0 h-full flex flex-col items-center justify-center text-center">
+        <div className={`w-16 h-16 rounded-full ${brand.color} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
+          <Icon className="h-8 w-8 text-primary" />
+        </div>
+        <h3 className="font-medium text-lg">{brand.name}</h3>
+        <Badge variant="outline" className="mt-2 bg-background/50">Watch Brand</Badge>
+      </CardContent>
+    </Card>
+  );
+};
+
 const Shop = () => {
   const [selectedBrand, setSelectedBrand] = useState("All Brands");
   const [selectedPrice, setSelectedPrice] = useState("All Prices");
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeView, setActiveView] = useState<'brands' | 'products'>('brands');
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -97,13 +136,13 @@ const Shop = () => {
       
       <div className="flex-1 container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <h1 className="text-3xl font-bold mb-4 md:mb-0">Shop Independent Watches</h1>
+          <h1 className="text-3xl font-bold mb-4 md:mb-0">Independent Watch Brands</h1>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
             <div className="relative w-full sm:w-64">
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input 
-                placeholder="Search watches..." 
+                placeholder="Search brands..." 
                 className="pl-9"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -111,56 +150,23 @@ const Shop = () => {
             </div>
             
             <div className="flex gap-2">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Filter className="h-4 w-4" />
-                    <span className="hidden sm:inline">Filters</span>
-                    <ChevronDown className="h-4 w-4 opacity-50" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-72">
-                  <div className="grid gap-4">
-                    <div className="space-y-2">
-                      <h4 className="font-medium">Brand</h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {BRANDS.map((brand) => (
-                          <div key={brand} className="flex items-center space-x-2">
-                            <input
-                              type="radio"
-                              id={brand}
-                              checked={selectedBrand === brand}
-                              onChange={() => setSelectedBrand(brand)}
-                              className="text-primary"
-                            />
-                            <Label htmlFor={brand}>{brand}</Label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-medium">Price Range</h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {PRICE_RANGES.map((range) => (
-                          <div key={range} className="flex items-center space-x-2">
-                            <input
-                              type="radio"
-                              id={range}
-                              checked={selectedPrice === range}
-                              onChange={() => setSelectedPrice(range)}
-                              className="text-primary"
-                            />
-                            <Label htmlFor={range}>{range}</Label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <Button className="w-full">Apply Filters</Button>
-                  </div>
-                </PopoverContent>
-              </Popover>
+              <Button 
+                variant={activeView === 'brands' ? 'default' : 'outline'} 
+                className="flex items-center gap-2"
+                onClick={() => setActiveView('brands')}
+              >
+                <LayoutGrid className="h-4 w-4" />
+                <span className="hidden sm:inline">Brands</span>
+              </Button>
+              
+              <Button 
+                variant={activeView === 'products' ? 'default' : 'outline'} 
+                className="flex items-center gap-2"
+                onClick={() => setActiveView('products')}
+              >
+                <Watch className="h-4 w-4" />
+                <span className="hidden sm:inline">Products</span>
+              </Button>
               
               <Popover>
                 <PopoverTrigger asChild>
@@ -172,8 +178,8 @@ const Shop = () => {
                 </PopoverTrigger>
                 <PopoverContent className="w-56">
                   <div className="grid gap-2">
-                    <Button variant="ghost" className="justify-start">Price: Low to High</Button>
-                    <Button variant="ghost" className="justify-start">Price: High to Low</Button>
+                    <Button variant="ghost" className="justify-start">A-Z</Button>
+                    <Button variant="ghost" className="justify-start">Z-A</Button>
                     <Button variant="ghost" className="justify-start">Newest First</Button>
                     <Button variant="ghost" className="justify-start">Popularity</Button>
                   </div>
@@ -183,11 +189,25 @@ const Shop = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {WATCHES.map(watch => (
-            <ProductCard key={watch.id} watch={watch} />
-          ))}
-        </div>
+        {activeView === 'brands' ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            {BRANDS
+              .filter(brand => 
+                searchQuery === '' || 
+                brand.name.toLowerCase().includes(searchQuery.toLowerCase())
+              )
+              .map(brand => (
+                <BrandSquare key={brand.name} brand={brand} />
+              ))
+            }
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {WATCHES.map(watch => (
+              <ProductCard key={watch.id} watch={watch} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

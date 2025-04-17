@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -19,21 +18,23 @@ interface SearchResult {
   link: string;
 }
 
+// Keep the existing BRANDS data structure from Shop.tsx
+const BRANDS = [
+  { name: "Baltic", country: "France" },
+  { name: "Brew", country: "USA" },
+  { name: "Farer", country: "UK" },
+  { name: "Halios", country: "Canada" },
+  { name: "Lorier", country: "USA" },
+  { name: "Monta", country: "USA" },
+  { name: "Autodromo", country: "USA" },
+  { name: "Kurono", country: "Japan" },
+  { name: "Anordain", country: "UK" },
+  { name: "Beaucroft", country: "Switzerland" },
+  { name: "Nivada Grenchen", country: "Switzerland" },
+  { name: "Norqain", country: "Switzerland" }
+];
+
 const mockResults: SearchResult[] = [
-  { 
-    id: '1', 
-    category: 'shop', 
-    title: 'Baltic Aquascaphe', 
-    description: 'Vintage-inspired dive watch',
-    link: '/shop/baltic' 
-  },
-  { 
-    id: '2', 
-    category: 'shop', 
-    title: 'Lorier Neptune', 
-    description: 'Modern tool watch',
-    link: '/shop/lorier' 
-  },
   { 
     id: '3', 
     category: 'community', 
@@ -52,6 +53,7 @@ const mockResults: SearchResult[] = [
 
 export function SearchCommand() {
   const [open, setOpen] = React.useState(false);
+  const [searchQuery, setSearchQuery] = React.useState("");
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -70,6 +72,27 @@ export function SearchCommand() {
     navigate(result.link);
   };
 
+  // Filter brands based on search query
+  const filteredBrands = BRANDS.filter(brand => 
+    brand.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleSearch = (value: string) => {
+    setSearchQuery(value);
+    
+    // If there's exactly one brand match and user has typed at least 2 characters
+    if (value.length >= 2) {
+      const exactMatch = BRANDS.find(
+        brand => brand.name.toLowerCase() === value.toLowerCase()
+      );
+      
+      if (exactMatch) {
+        setOpen(false);
+        navigate(`/shop/${exactMatch.name.toLowerCase()}`);
+      }
+    }
+  };
+
   return (
     <>
       <button
@@ -85,28 +108,33 @@ export function SearchCommand() {
         </kbd>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search brands, topics, news..." />
+        <CommandInput 
+          placeholder="Search brands, topics, news..." 
+          value={searchQuery}
+          onValueChange={handleSearch}
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Shop">
-            {mockResults
-              .filter(result => result.category === 'shop')
-              .map(result => (
+          {filteredBrands.length > 0 && (
+            <CommandGroup heading="Brands">
+              {filteredBrands.map(brand => (
                 <CommandItem
-                  key={result.id}
-                  onSelect={() => handleSelect(result)}
+                  key={brand.name}
+                  onSelect={() => {
+                    setOpen(false);
+                    navigate(`/shop/${brand.name.toLowerCase()}`);
+                  }}
                   className="flex items-center gap-2"
                 >
                   <ShoppingBag className="h-4 w-4" />
                   <div>
-                    <p>{result.title}</p>
-                    {result.description && (
-                      <p className="text-sm text-muted-foreground">{result.description}</p>
-                    )}
+                    <p>{brand.name}</p>
+                    <p className="text-sm text-muted-foreground">{brand.country}</p>
                   </div>
                 </CommandItem>
               ))}
-          </CommandGroup>
+            </CommandGroup>
+          )}
           <CommandGroup heading="Community">
             {mockResults
               .filter(result => result.category === 'community')

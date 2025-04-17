@@ -14,6 +14,7 @@ import {
   Gauge 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import User from '@/components/User';
 
 const BrandCard = ({ name, imageSrc }: { name: string; imageSrc: string }) => (
   <Card className="overflow-hidden group transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50">

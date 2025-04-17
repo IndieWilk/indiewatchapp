@@ -103,7 +103,7 @@ const Index = () => {
   const brands = [
     { 
       name: 'Baltic', 
-      imageSrc: 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=500' // Baltic style dive watch
+      imageSrc: 'https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500' // Baltic style dive watch
     },
     { 
       name: 'Maen', 
@@ -155,7 +155,7 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <ShoppingBag className="mr-2 h-5 w-5" /> Shop Watches
+              <ShoppingBag className="mr-2 h-5 w-5" /> Super-cool watches here!
             </Button>
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
               <MessageSquare className="mr-2 h-5 w-5" /> Join Community

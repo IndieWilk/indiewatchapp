@@ -160,14 +160,18 @@ const Index = () => {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Discover Brands</h2>
-                <Link to="/shop" className="text-primary flex items-center">
-                  View All <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
+                
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {brands.map((brand) => (
                   <BrandCard key={brand.name} name={brand.name} imageSrc={brand.imageSrc} />
                 ))}
+              </div>
+              
+              <div className="flex justify-center mt-6">
+                <Link to="/shop" className="text-primary flex items-center">
+                  View All <ChevronRight className="h-4 w-4 ml-1" />
+                </Link>
               </div>
             </div>
             

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -112,7 +111,7 @@ const Index = () => {
     },
     { 
       name: 'Norqain', 
-      imageSrc: 'https://images.unsplash.com/photo-1548690596-f1722c190938?q=80&w=500' // Sports watch with bracelet
+      imageSrc: 'https://images.unsplash.com/photo-1548690596-f1722c190938?q=80&w=500' // Sports watch with bracelet showing clear watch face
     },
     { 
       name: 'Beaucroft', 
@@ -217,4 +216,3 @@ const Index = () => {
 };
 
 export default Index;
-

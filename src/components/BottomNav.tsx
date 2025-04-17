@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, ShoppingBag, Users, Newspaper, Watch } from 'lucide-react';
+import { Home, ShoppingBag, Users, Newspaper, Gift } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const BottomNav = () => {
@@ -30,7 +30,7 @@ const BottomNav = () => {
     },
     {
       name: 'The Wheel',
-      icon: Watch,
+      icon: Gift,
       path: '/settings',
     },
   ];

@@ -13,7 +13,7 @@ const BrandCard = ({ name, imageSrc }: { name: string; imageSrc: string }) => (
     <div className="aspect-square bg-muted relative overflow-hidden">
       <img 
         src={imageSrc} 
-        alt={`${name} Brand`} 
+        alt={`${name} Watch`} 
         className="object-cover w-full h-full transition-transform group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
@@ -95,27 +95,27 @@ const Index = () => {
   const brands = [
     { 
       name: 'Baltic', 
-      imageSrc: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=500'
+      imageSrc: 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=500' // Baltic style dive watch
     },
     { 
       name: 'Maen', 
-      imageSrc: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=500'
+      imageSrc: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=500' // Minimalist field watch (Maen style)
     },
     { 
       name: 'Norqain', 
-      imageSrc: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=500'
+      imageSrc: 'https://images.unsplash.com/photo-1548690596-f1722c190938?q=80&w=500' // Sports watch with bracelet
     },
     { 
       name: 'Beaucroft', 
-      imageSrc: 'https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=500'
+      imageSrc: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500' // Dress watch style
     },
     { 
       name: 'Farer', 
-      imageSrc: 'https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?q=80&w=500'
+      imageSrc: 'https://images.unsplash.com/photo-1612541831716-e3e50f0b61a9?q=80&w=500' // Colorful dial (Farer style)
     },
     { 
       name: 'Serica', 
-      imageSrc: 'https://images.unsplash.com/photo-1539874754764-5a96559165b0?q=80&w=500'
+      imageSrc: 'https://images.unsplash.com/photo-1614703418052-d5b893d495bc?q=80&w=500' // Field/military style watch
     }
   ];
 

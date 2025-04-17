@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -176,13 +175,13 @@ const Index = () => {
             
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Latest Articles</h2>
+                <h2 className="text-2xl font-bold">Latest News</h2>
                 <Link to="/content" className="text-primary flex items-center">
                   View All <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[1, 2, 3].map((i) => (
+                {[1, 2, 3, 4].map((i) => (
                   <ArticlePreview key={i} />
                 ))}
               </div>

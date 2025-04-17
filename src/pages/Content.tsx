@@ -1,9 +1,11 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Clock, Tag } from 'lucide-react';
+import { ChevronRight, Clock, Search, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
 
 const ARTICLES = [
   {
@@ -113,6 +115,8 @@ const ArticleCard = ({ article }: { article: typeof ARTICLES[0] }) => (
 );
 
 const Content = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <div className="flex flex-col min-h-screen">
       <MainNav />
@@ -130,6 +134,21 @@ const Content = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <h2 className="text-3xl font-bold mb-4 md:mb-0">Latest News</h2>
           
+          <div className="relative w-full md:w-auto md:max-w-xs">
+            <div className="flex items-center rounded-md border bg-background pr-3">
+              <Input
+                type="search"
+                placeholder="Search brands..."
+                className="border-0 focus-visible:ring-0"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Search className="h-4 w-4 text-muted-foreground" />
+            </div>
+          </div>
+        </div>
+        
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div className="flex flex-wrap gap-3">
             <Button variant="outline" size="sm" className="rounded-full">All</Button>
             <Button variant="outline" size="sm" className="rounded-full">Reviews</Button>

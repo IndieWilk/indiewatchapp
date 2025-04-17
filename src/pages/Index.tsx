@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -7,11 +8,11 @@ import { ChevronRight, Clock, MessageSquare, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import User from '@/components/User';
 
-const BrandCard = ({ name }: { name: string }) => (
+const BrandCard = ({ name, imageSrc }: { name: string; imageSrc: string }) => (
   <Card className="overflow-hidden group transition-all hover:shadow-md">
     <div className="aspect-square bg-muted relative overflow-hidden">
       <img 
-        src="https://images.unsplash.com/photo-1549482199-bc1ca6f58502?q=80&w=500" 
+        src={imageSrc} 
         alt={`${name} Brand`} 
         className="object-cover w-full h-full transition-transform group-hover:scale-105"
       />
@@ -91,7 +92,32 @@ const ArticlePreview = () => (
 );
 
 const Index = () => {
-  const brands = ['Baltic', 'Maen', 'Norqain', 'Beaucroft', 'Farer', 'Serica'];
+  const brands = [
+    { 
+      name: 'Baltic', 
+      imageSrc: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=500'
+    },
+    { 
+      name: 'Maen', 
+      imageSrc: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=500'
+    },
+    { 
+      name: 'Norqain', 
+      imageSrc: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=500'
+    },
+    { 
+      name: 'Beaucroft', 
+      imageSrc: 'https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=500'
+    },
+    { 
+      name: 'Farer', 
+      imageSrc: 'https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?q=80&w=500'
+    },
+    { 
+      name: 'Serica', 
+      imageSrc: 'https://images.unsplash.com/photo-1539874754764-5a96559165b0?q=80&w=500'
+    }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -129,7 +155,7 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {brands.map((brand) => (
-                  <BrandCard key={brand} name={brand} />
+                  <BrandCard key={brand.name} name={brand.name} imageSrc={brand.imageSrc} />
                 ))}
               </div>
             </div>

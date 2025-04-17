@@ -111,7 +111,7 @@ const Index = () => {
     },
     { 
       name: 'Norqain', 
-      imageSrc: 'https://images.unsplash.com/photo-1548690596-f1722c190938?q=80&w=500' // Sports watch with bracelet showing clear watch face
+      imageSrc: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500' // Replaced with a clear watch image
     },
     { 
       name: 'Beaucroft', 

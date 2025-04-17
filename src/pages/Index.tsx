@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -104,7 +105,7 @@ const Index = () => {
             {/* Shop Section Preview */}
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Featured Watches</h2>
+                <h2 className="text-2xl font-bold">Discover Brands</h2>
                 <Link to="/shop" className="text-primary flex items-center">
                   View All <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
@@ -153,3 +154,4 @@ const Index = () => {
 };
 
 export default Index;
+

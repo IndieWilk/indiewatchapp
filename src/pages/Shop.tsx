@@ -80,7 +80,7 @@ const BRANDS: Brand[] = [
   { 
     name: "Norqain", 
     country: "Switzerland",
-    image: "https://images.unsplash.com/photo-1569411032431-07598b0012c2?w=500&h=500&fit=crop"
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=500&fit=crop"
   }
 ];
 

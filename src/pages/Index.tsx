@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 import User from '@/components/User';
 
 const BrandCard = ({ name, imageSrc }: { name: string; imageSrc: string }) => (
-  <Card className="overflow-hidden group transition-all hover:shadow-md">
+  <Card className="overflow-hidden group transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50">
     <div className="aspect-square bg-muted relative overflow-hidden">
       <img 
         src={imageSrc} 
@@ -56,7 +56,7 @@ const FeaturedProduct = () => (
 );
 
 const CommunityPost = () => (
-  <Card className="overflow-hidden hover:shadow-md transition-all">
+  <Card className="overflow-hidden hover:shadow-md transition-all border-2 border-primary/30 hover:border-primary/50">
     <CardContent className="p-4">
       <div className="flex items-start gap-3">
         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
@@ -77,7 +77,7 @@ const CommunityPost = () => (
 );
 
 const ArticlePreview = () => (
-  <Card className="overflow-hidden group transition-all hover:shadow-md">
+  <Card className="overflow-hidden group transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50">
     <div className="aspect-video bg-muted relative overflow-hidden">
       <img 
         src="https://images.unsplash.com/photo-1548169874-53e85f753f1e?q=80&w=500" 

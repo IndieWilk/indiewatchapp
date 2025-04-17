@@ -5,13 +5,8 @@ import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   ChevronRight, 
-  Clock, 
-  MessageSquare, 
   ShoppingBag, 
-  Watch, 
-  Timer, 
-  TimerReset, 
-  Gauge 
+  MessageSquare
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import User from '@/components/User';
@@ -103,27 +98,27 @@ const Index = () => {
   const brands = [
     { 
       name: 'Baltic', 
-      imageSrc: 'https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500' // Baltic style dive watch
+      imageSrc: 'https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500'
     },
     { 
       name: 'Maen', 
-      imageSrc: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=500' // Minimalist field watch (Maen style)
+      imageSrc: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=500'
     },
     { 
       name: 'Norqain', 
-      imageSrc: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500' // Replaced with a clear watch image
+      imageSrc: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500'
     },
     { 
       name: 'Beaucroft', 
-      imageSrc: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500' // Dress watch style
+      imageSrc: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500'
     },
     { 
       name: 'Farer', 
-      imageSrc: 'https://images.unsplash.com/photo-1612541831716-e3e50f0b61a9?q=80&w=500' // Colorful dial (Farer style)
+      imageSrc: 'https://images.unsplash.com/photo-1612541831716-e3e50f0b61a9?q=80&w=500'
     },
     { 
       name: 'Serica', 
-      imageSrc: 'https://images.unsplash.com/photo-1614703418052-d5b893d495bc?q=80&w=500' // Field/military style watch
+      imageSrc: 'https://images.unsplash.com/photo-1614703418052-d5b893d495bc?q=80&w=500'
     }
   ];
 
@@ -134,14 +129,6 @@ const Index = () => {
       <section className="py-16 px-4 md:py-24 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
           <div className="flex justify-center items-center mb-6 relative">
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
-              <Watch className="text-primary/50 w-10 h-10 animate-pulse" />
-              <Clock className="text-primary/50 w-10 h-10 animate-pulse delay-300" />
-            </div>
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
-              <TimerReset className="text-primary/50 w-10 h-10 animate-pulse delay-150" />
-              <Gauge className="text-primary/50 w-10 h-10 animate-pulse" />
-            </div>
             <Logo className="mx-auto w-16 h-16 md:w-24 md:h-24" />
           </div>
           

@@ -68,7 +68,7 @@ const CommunityPost = () => (
           <p className="text-sm mb-3">Just got my hands on the new Neptune. The bracelet is even better than previous versions...</p>
           <div className="flex items-center text-muted-foreground text-xs gap-4">
             <span className="flex items-center gap-1"><MessageSquare className="h-3 w-3" /> 24 comments</span>
-            <span>↑ 156 upvotes</span>
+            <span>↑ 156 Ticks</span>
           </div>
         </div>
       </div>

@@ -14,7 +14,6 @@ import {
   Gauge 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import User from '@/components/User';
 
 const BrandCard = ({ name, imageSrc }: { name: string; imageSrc: string }) => (
   <Card className="overflow-hidden group transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50">
@@ -154,9 +153,11 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <ShoppingBag className="mr-2 h-5 w-5" /> Super-cool watches here!
-            </Button>
+            <Link to="/shop">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <ShoppingBag className="mr-2 h-5 w-5" /> Super-cool watches here!
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
               <MessageSquare className="mr-2 h-5 w-5" /> Join Community
             </Button>

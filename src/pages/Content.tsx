@@ -82,7 +82,7 @@ const FEATURED_ARTICLE = {
 };
 
 const ArticleCard = ({ article }: { article: typeof ARTICLES[0] }) => (
-  <Card className="overflow-hidden group transition-all hover:shadow-md">
+  <Card className="overflow-hidden group transition-all hover:shadow-md border-primary border-2">
     <div className="aspect-video bg-muted relative overflow-hidden">
       <img 
         src={article.image} 

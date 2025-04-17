@@ -127,7 +127,7 @@ const Content = () => {
             Independent Watch News Hub
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our app pulls all the latest news of the independent watch world into one place.
+            IndieWatch pulls all the latest news of the independent watch world into one place.
           </p>
         </div>
         

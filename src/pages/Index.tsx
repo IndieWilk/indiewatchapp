@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -6,6 +5,7 @@ import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, Clock, MessageSquare, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import User from '@/components/User';
 
 const FeaturedProduct = () => (
   <Card className="overflow-hidden group transition-all hover:shadow-md">

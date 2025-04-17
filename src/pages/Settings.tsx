@@ -87,7 +87,9 @@ const Settings = () => {
             </CardHeader>
             <CardContent className="flex flex-col items-center">
               <div className="text-center mb-6">
-                <p className="text-muted-foreground mb-2">Spin the wheel once a month for a chance to win exclusive rewards!</p>
+                <p className="text-muted-foreground mb-2">
+                  Each month, three lucky watch geeks can win a watch from one of our partners. Spin to play!
+                </p>
                 {canSpin ? (
                   <p className="text-sm text-primary font-medium">You have 1 spin available</p>
                 ) : (

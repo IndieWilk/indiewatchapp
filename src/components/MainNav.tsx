@@ -34,7 +34,7 @@ const MainNav = () => {
           <Button variant="ghost" size="icon" aria-label="Account">
             <User className="h-5 w-5" />
           </Button>
-          <Button variant="ghost" size="icon" aria-label="The Wheel" onClick={() => window.location.href = '/settings'}>
+          <Button variant="ghost" size="icon" aria-label="The Wheel">
             <Cog className="h-5 w-5" />
           </Button>
           <Button variant="ghost" size="icon" aria-label="Shopping Cart">

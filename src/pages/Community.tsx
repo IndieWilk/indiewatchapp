@@ -15,7 +15,7 @@ const COMMUNITY_POSTS = [
     content: "Just got my hands on the new Neptune. The bracelet is even better than previous versions. The clasp has been upgraded and the case finishing is superb for a watch at this price point. Anyone else picked one up yet?",
     comments: 24,
     upvotes: 156,
-    tags: ["Lorier", "Review", "New Release"]
+    tags: ["Lorier", "Review", "New Release", "Collection"]
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const COMMUNITY_POSTS = [
     content: "My Baltic Bronze is developing a beautiful patina after 3 months of wear. I've been swimming with it in the ocean twice a week. Here's how it looked when new vs now. The color shift is fascinating!",
     comments: 42,
     upvotes: 231,
-    tags: ["Baltic", "Bronze", "Patina"]
+    tags: ["Baltic", "Bronze", "Patina", "Collection"]
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const COMMUNITY_POSTS = [
     content: "I'm torn between the Farer GMT and Monta Atlas for my next travel watch. The Farer has more character with its colorful dial, but the Monta has better specs and finishing. Anyone have experience with both? What would you choose?",
     comments: 67,
     upvotes: 98,
-    tags: ["Farer", "Monta", "GMT", "Comparison"]
+    tags: ["Farer", "Monta", "GMT", "Comparison", "Collection"]
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const COMMUNITY_POSTS = [
     content: "After 8 months on the waitlist, I finally got my Halios Universa allocation email today! Going with the pastel blue dial. Anyone else get their email recently? How long did you wait?",
     comments: 53,
     upvotes: 187,
-    tags: ["Halios", "Universa", "Waitlist"]
+    tags: ["Halios", "Universa", "Waitlist", "Collection"]
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const COMMUNITY_POSTS = [
     content: "I've been tracking several upcoming releases from indie brands. Here's my list of the most anticipated: 1. Brew's new chrono with mechanical movement, 2. Baltic's new GMT, 3. Atelier Wen's new sports model...",
     comments: 81,
     upvotes: 312,
-    tags: ["Upcoming", "New Releases", "2025"]
+    tags: ["Upcoming", "New Releases", "2025", "Collection"]
   }
 ];
 
@@ -147,7 +147,7 @@ const Community = () => {
               <CardContent className="p-4">
                 <h3 className="font-medium mb-4">Popular Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Baltic", "Brew", "Farer", "Halios", "Lorier", "Monta", "Reviews", "New Releases", "Questions", "Vintage", "Diving", "GMT"].map(tag => (
+                  {["Baltic", "Brew", "Farer", "Halios", "Lorier", "Monta", "Reviews", "New Releases", "Questions", "Vintage", "Diving", "GMT", "Collection"].map(tag => (
                     <span key={tag} className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">
                       {tag}
                     </span>

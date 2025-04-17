@@ -85,7 +85,7 @@ const Index = () => {
             IndieWatch
           </h1>
           <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-            A home for global fans of independent watch brands. Learn, interact and shop for the worlds best independently owned watch brands.
+            The All-in-one app for watch lovers
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">

@@ -1,14 +1,11 @@
-
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
-  NavigationMenuContent,
+  NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
@@ -25,49 +22,7 @@ const MainNav = () => {
         
         <NavigationMenu className="hidden md:flex mx-6">
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link to="/shop">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Shop
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link to="/community">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Community
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link to="/content">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Articles
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Brands</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {["Baltic", "Brew", "Farer", "Halios", "Lorier", "Monta"].map((brand) => (
-                    <li key={brand}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to={`/brands/${brand.toLowerCase()}`}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">{brand}</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Discover {brand} watches
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+            
           </NavigationMenuList>
         </NavigationMenu>
         

@@ -99,40 +99,14 @@ const Settings = () => {
                 {/* Wheel indicator (pointer) */}
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-l-transparent border-r-transparent border-b-primary" />
                 
-                {/* The wheel */}
+                {/* The wheel - just a blue outline */}
                 <div 
                   className="w-full h-full rounded-full border-4 border-primary relative overflow-hidden"
                   style={{ 
                     transform: `rotate(${rotation}deg)`,
                     transition: isSpinning ? 'transform 5s cubic-bezier(0.2, 0.8, 0.2, 1)' : 'none'
                   }}
-                >
-                  {prizes.map((prize, index) => {
-                    const rotate = (index * (360 / prizes.length));
-                    const backgroundColor = index % 2 === 0 ? 'bg-primary/10' : 'bg-primary/20';
-                    
-                    return (
-                      <div 
-                        key={index}
-                        className={`absolute top-0 left-0 w-full h-full ${backgroundColor}`}
-                        style={{ 
-                          clipPath: `polygon(50% 50%, 50% 0%, ${50 + 50 * Math.cos((rotate + 360 / prizes.length) * Math.PI / 180)}% ${50 + 50 * Math.sin((rotate + 360 / prizes.length) * Math.PI / 180)}%, ${50 + 50 * Math.cos(rotate * Math.PI / 180)}% ${50 + 50 * Math.sin(rotate * Math.PI / 180)}%)`,
-                        }}
-                      >
-                        <div 
-                          className="absolute origin-bottom-left whitespace-nowrap text-xs font-medium"
-                          style={{ 
-                            left: '50%', 
-                            top: '15%',
-                            transform: `rotate(${rotate + (360 / prizes.length) / 2}deg) translateX(-50%)` 
-                          }}
-                        >
-                          {prize}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                />
               </div>
               
               {prize && (

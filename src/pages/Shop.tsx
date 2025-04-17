@@ -6,89 +6,82 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { 
   ChevronDown, 
   Search, 
   SlidersHorizontal, 
-  Watch, 
-  Clock, 
-  Timer, 
-  Award, 
-  Compass, 
-  LayoutGrid,
   Filter,
   X
 } from 'lucide-react';
 
-const BRANDS = [
+interface Brand {
+  name: string;
+  country: string;
+  image: string;
+}
+
+const BRANDS: Brand[] = [
   { 
     name: "Baltic", 
-    icon: Watch, 
-    color: "bg-primary/10",
-    country: "France"
+    country: "France",
+    image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=500&h=500&fit=crop"
   },
   { 
     name: "Brew", 
-    icon: Clock, 
-    color: "bg-primary-300/20",
-    country: "USA"
+    country: "USA",
+    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500&h=500&fit=crop"
   },
   { 
     name: "Farer", 
-    icon: Compass, 
-    color: "bg-primary-500/20",
-    country: "UK"
+    country: "UK",
+    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop"
   },
   { 
     name: "Halios", 
-    icon: Timer, 
-    color: "bg-primary-400/20",
-    country: "Canada"
+    country: "Canada",
+    image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop"
   },
   { 
     name: "Lorier", 
-    icon: Award, 
-    color: "bg-primary-200/20",
-    country: "USA"
+    country: "USA",
+    image: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=500&h=500&fit=crop"
   },
   { 
     name: "Monta", 
-    icon: LayoutGrid, 
-    color: "bg-primary-600/20",
-    country: "USA"
+    country: "USA",
+    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop"
   },
   { 
     name: "Autodromo", 
-    icon: Watch, 
-    color: "bg-primary/10",
-    country: "USA"
+    country: "USA",
+    image: "https://images.unsplash.com/photo-1569411032431-07598b0012c2?w=500&h=500&fit=crop"
   },
   { 
     name: "Kurono", 
-    icon: Clock, 
-    color: "bg-primary-300/20",
-    country: "Japan"
+    country: "Japan",
+    image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop"
   },
   { 
     name: "Anordain", 
-    icon: Compass, 
-    color: "bg-primary-500/20",
-    country: "UK"
+    country: "UK",
+    image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop"
   }
 ];
 
-// Remove style from filter options
 const COUNTRIES = Array.from(new Set(BRANDS.map(brand => brand.country)));
 
-const BrandSquare = ({ brand }: { brand: typeof BRANDS[0] }) => {
-  const Icon = brand.icon;
-  
+const BrandSquare = ({ brand }: { brand: Brand }) => {
   return (
-    <Card className="aspect-square overflow-hidden transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50 group cursor-pointer">
-      <CardContent className="p-0 h-full flex flex-col items-center justify-center text-center">
-        <div className={`w-16 h-16 rounded-full ${brand.color} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
-          <Icon className="h-8 w-8 text-primary" />
-        </div>
+    <Card className="overflow-hidden transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50 group cursor-pointer">
+      <AspectRatio ratio={1 / 1}>
+        <img 
+          src={brand.image} 
+          alt={`${brand.name} watch`}
+          className="object-cover w-full h-full transition-transform group-hover:scale-105"
+        />
+      </AspectRatio>
+      <CardContent className="p-4">
         <h3 className="font-medium text-lg">{brand.name}</h3>
         <Badge variant="secondary" className="mt-1 text-xs">{brand.country}</Badge>
       </CardContent>
@@ -149,12 +142,10 @@ const Shop = () => {
   };
   
   const filteredBrands = BRANDS.filter(brand => {
-    // Filter by search query
     const matchesSearch = 
       searchQuery === '' || 
       brand.name.toLowerCase().includes(searchQuery.toLowerCase());
     
-    // Filter by selected countries
     const matchesCountry = 
       selectedCountries.length === 0 || 
       selectedCountries.includes(brand.country);

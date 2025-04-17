@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -84,8 +85,7 @@ const Index = () => {
             IndieWatch
           </h1>
           <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-            Discover and support the most exciting independent watchmakers
-            crafting unique timepieces with passion and precision.
+            A home for global fans of independent watch brands. Learn, interact and shop for the worlds best independently owned watch brands.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">

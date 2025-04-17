@@ -60,7 +60,7 @@ const COMMUNITY_POSTS = [
 ];
 
 const CommunityPost = ({ post }: { post: typeof COMMUNITY_POSTS[0] }) => (
-  <Card className="overflow-hidden hover:shadow-md transition-all">
+  <Card className="overflow-hidden hover:shadow-md transition-all border-primary border-2">
     <CardContent className="p-4">
       <div className="flex items-start gap-3">
         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
@@ -115,7 +115,7 @@ const Community = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="lg:col-span-3 space-y-6">
-            <Card>
+            <Card className="border-primary border-2">
               <CardContent className="p-4">
                 <div className="flex gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
@@ -143,7 +143,7 @@ const Community = () => {
           </div>
           
           <div className="space-y-6">
-            <Card>
+            <Card className="border-primary border-2">
               <CardContent className="p-4">
                 <h3 className="font-medium mb-4">Popular Tags</h3>
                 <div className="flex flex-wrap gap-2">
@@ -156,7 +156,7 @@ const Community = () => {
               </CardContent>
             </Card>
             
-            <Card>
+            <Card className="border-primary border-2">
               <CardContent className="p-4">
                 <h3 className="font-medium mb-4">Community Guidelines</h3>
                 <ul className="text-sm space-y-2 text-muted-foreground">

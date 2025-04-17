@@ -1,3 +1,4 @@
+
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,7 +11,7 @@ const Settings = () => {
       <MainNav />
       
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">The Wheel</h1>
+        <h1 className="text-3xl font-bold mb-6">Watch Geek Wheel</h1>
         
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
           <Card className="col-span-1 md:col-span-2 border-primary border-2">
@@ -28,7 +29,7 @@ const Settings = () => {
                 </div>
               </div>
               <p className="mt-4 text-base text-muted-foreground max-w-md">
-                Each month, three lucky watch geeks can win a watch from one of our partners. Spin to play!
+                Three lucky watch geeks can win a watch from one of our partners each month.
               </p>
               <Button className="mt-6">Spin Now</Button>
             </CardContent>

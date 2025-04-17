@@ -13,7 +13,7 @@ const Settings = () => {
         <h1 className="text-3xl font-bold mb-6">The Wheel</h1>
         
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-          <Card className="col-span-1 md:col-span-2">
+          <Card className="col-span-1 md:col-span-2 border-primary border-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Gift className="h-6 w-6 text-primary" />
@@ -34,8 +34,7 @@ const Settings = () => {
             </CardContent>
           </Card>
           
-          {/* Featured Partner Cards */}
-          <Card>
+          <Card className="border-primary border-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Compass className="h-6 w-6 text-primary" />
@@ -50,7 +49,7 @@ const Settings = () => {
             </CardContent>
           </Card>
           
-          <Card>
+          <Card className="border-primary border-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Newspaper className="h-6 w-6 text-primary" />
@@ -65,7 +64,7 @@ const Settings = () => {
             </CardContent>
           </Card>
           
-          <Card className="col-span-1 md:col-span-2">
+          <Card className="col-span-1 md:col-span-2 border-primary border-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <MessageSquare className="h-6 w-6 text-primary" />

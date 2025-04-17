@@ -26,18 +26,18 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))", // Baby Blue
-          foreground: "hsl(var(--primary-foreground))", // Black text
-          50: "hsl(197, 89%, 96%)",   // Lightest Baby Blue
-          100: "hsl(197, 89%, 86%)",
-          200: "hsl(197, 89%, 76%)",
-          300: "hsl(197, 89%, 66%)",
-          400: "hsl(197, 89%, 56%)",  // Main Baby Blue
-          500: "hsl(197, 89%, 46%)",
-          600: "hsl(197, 89%, 36%)",
-          700: "hsl(197, 89%, 26%)",
-          800: "hsl(197, 89%, 16%)",
-          900: "hsl(197, 89%, 6%)",
+          DEFAULT: "hsl(var(--primary))", // Vibrant purple
+          foreground: "hsl(var(--primary-foreground))", // White text
+          50: "hsl(270, 80%, 95%)",   // Lightest purple
+          100: "hsl(270, 80%, 85%)",
+          200: "hsl(270, 80%, 75%)",
+          300: "hsl(270, 80%, 70%)",
+          400: "hsl(270, 80%, 65%)",  
+          500: "hsl(270, 80%, 60%)",  // Main purple
+          600: "hsl(270, 80%, 50%)",
+          700: "hsl(270, 80%, 40%)",
+          800: "hsl(270, 80%, 30%)",
+          900: "hsl(270, 80%, 20%)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

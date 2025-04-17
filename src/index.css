@@ -5,32 +5,32 @@
 
 @layer base {
   :root {
-    --background: 197 89% 20%; /* Darker baby blue for background */
-    --foreground: 210 40% 98%; /* Light text for contrast */
-    --primary: 197 89% 56%; /* Baby Blue */
-    --primary-foreground: 0 0% 0%; /* Black text on baby blue */
+    --background: 270 50% 15%; /* Deep purple background */
+    --foreground: 270 30% 95%; /* Light text for contrast */
+    --primary: 270 80% 60%; /* Vibrant purple from logo */
+    --primary-foreground: 0 0% 100%; /* White text on purple */
     
-    --card: 197 89% 10%; /* Darker card background */
-    --card-foreground: 210 40% 98%;
+    --card: 270 60% 10%; /* Darker card background */
+    --card-foreground: 270 30% 95%;
     
-    --popover: 197 89% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 270 60% 10%;
+    --popover-foreground: 270 30% 95%;
     
-    --secondary: 197 60% 25%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 250 60% 40%; /* Blue-purple secondary */
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 197 30% 25%;
-    --muted-foreground: 197 10% 80%;
+    --muted: 270 30% 25%;
+    --muted-foreground: 270 10% 80%;
     
-    --accent: 197 89% 30%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 270 70% 45%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 197 30% 30%;
-    --input: 197 30% 30%;
-    --ring: 197 89% 60%;
+    --border: 270 30% 30%;
+    --input: 270 30% 30%;
+    --ring: 270 80% 60%;
     --radius: 0.5rem;
   }
 }

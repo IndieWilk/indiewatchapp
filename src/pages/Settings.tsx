@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,7 +17,7 @@ const Settings = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Gift className="h-6 w-6 text-primary" />
-                Monthly Reward Wheel
+                The Watch Geek Wheel
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center justify-center text-center p-12">

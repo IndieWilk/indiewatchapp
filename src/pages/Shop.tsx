@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
 import { 
   ChevronDown, 
   Search, 
@@ -15,20 +16,90 @@ import {
   Timer, 
   Award, 
   Compass, 
-  LayoutGrid
+  LayoutGrid,
+  Filter,
+  X
 } from 'lucide-react';
 
 const BRANDS = [
-  { name: "Baltic", icon: Watch, color: "bg-primary/10" },
-  { name: "Brew", icon: Clock, color: "bg-primary-300/20" },
-  { name: "Farer", icon: Compass, color: "bg-primary-500/20" },
-  { name: "Halios", icon: Timer, color: "bg-primary-400/20" },
-  { name: "Lorier", icon: Award, color: "bg-primary-200/20" },
-  { name: "Monta", icon: LayoutGrid, color: "bg-primary-600/20" },
-  { name: "Autodromo", icon: Watch, color: "bg-primary/10" },
-  { name: "Kurono", icon: Clock, color: "bg-primary-300/20" },
-  { name: "Anordain", icon: Compass, color: "bg-primary-500/20" }
+  { 
+    name: "Baltic", 
+    icon: Watch, 
+    color: "bg-primary/10",
+    country: "France",
+    style: "Dive",
+    priceRange: "Mid-range"
+  },
+  { 
+    name: "Brew", 
+    icon: Clock, 
+    color: "bg-primary-300/20",
+    country: "USA",
+    style: "Chronograph",
+    priceRange: "Mid-range"
+  },
+  { 
+    name: "Farer", 
+    icon: Compass, 
+    color: "bg-primary-500/20",
+    country: "UK",
+    style: "GMT",
+    priceRange: "Mid-range"
+  },
+  { 
+    name: "Halios", 
+    icon: Timer, 
+    color: "bg-primary-400/20",
+    country: "Canada",
+    style: "Dive",
+    priceRange: "Mid-range"
+  },
+  { 
+    name: "Lorier", 
+    icon: Award, 
+    color: "bg-primary-200/20",
+    country: "USA",
+    style: "Field",
+    priceRange: "Affordable"
+  },
+  { 
+    name: "Monta", 
+    icon: LayoutGrid, 
+    color: "bg-primary-600/20",
+    country: "USA",
+    style: "Sports",
+    priceRange: "Premium"
+  },
+  { 
+    name: "Autodromo", 
+    icon: Watch, 
+    color: "bg-primary/10",
+    country: "USA",
+    style: "Racing",
+    priceRange: "Premium"
+  },
+  { 
+    name: "Kurono", 
+    icon: Clock, 
+    color: "bg-primary-300/20",
+    country: "Japan",
+    style: "Dress",
+    priceRange: "Premium"
+  },
+  { 
+    name: "Anordain", 
+    icon: Compass, 
+    color: "bg-primary-500/20",
+    country: "UK",
+    style: "Dress",
+    priceRange: "Premium"
+  }
 ];
+
+// Extract unique filter options
+const COUNTRIES = Array.from(new Set(BRANDS.map(brand => brand.country)));
+const STYLES = Array.from(new Set(BRANDS.map(brand => brand.style)));
+const PRICE_RANGES = Array.from(new Set(BRANDS.map(brand => brand.priceRange)));
 
 const BrandSquare = ({ brand }: { brand: typeof BRANDS[0] }) => {
   const Icon = brand.icon;
@@ -40,14 +111,112 @@ const BrandSquare = ({ brand }: { brand: typeof BRANDS[0] }) => {
           <Icon className="h-8 w-8 text-primary" />
         </div>
         <h3 className="font-medium text-lg">{brand.name}</h3>
-        <Badge variant="outline" className="mt-2 bg-background/50">Watch Brand</Badge>
+        <Badge variant="outline" className="mt-2 bg-background/50">{brand.style}</Badge>
+        <Badge variant="secondary" className="mt-1 text-xs">{brand.country}</Badge>
       </CardContent>
     </Card>
   );
 };
 
+const FilterSection = ({ 
+  title, 
+  options, 
+  selectedFilters, 
+  onFilterChange 
+}: { 
+  title: string, 
+  options: string[], 
+  selectedFilters: string[], 
+  onFilterChange: (option: string) => void
+}) => {
+  return (
+    <div className="mb-4">
+      <h3 className="font-medium mb-2">{title}</h3>
+      <div className="space-y-2">
+        {options.map(option => (
+          <div key={option} className="flex items-center space-x-2">
+            <Checkbox 
+              id={`${title}-${option}`} 
+              checked={selectedFilters.includes(option)} 
+              onCheckedChange={() => onFilterChange(option)}
+            />
+            <label 
+              htmlFor={`${title}-${option}`}
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              {option}
+            </label>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Shop = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
+  const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
+  const [selectedPriceRanges, setSelectedPriceRanges] = useState<string[]>([]);
+  
+  const toggleFilter = (type: 'country' | 'style' | 'price', option: string) => {
+    switch (type) {
+      case 'country':
+        setSelectedCountries(prev => 
+          prev.includes(option) 
+            ? prev.filter(item => item !== option) 
+            : [...prev, option]
+        );
+        break;
+      case 'style':
+        setSelectedStyles(prev => 
+          prev.includes(option) 
+            ? prev.filter(item => item !== option) 
+            : [...prev, option]
+        );
+        break;
+      case 'price':
+        setSelectedPriceRanges(prev => 
+          prev.includes(option) 
+            ? prev.filter(item => item !== option) 
+            : [...prev, option]
+        );
+        break;
+    }
+  };
+  
+  const clearAllFilters = () => {
+    setSelectedCountries([]);
+    setSelectedStyles([]);
+    setSelectedPriceRanges([]);
+  };
+  
+  const filteredBrands = BRANDS.filter(brand => {
+    // Filter by search query
+    const matchesSearch = 
+      searchQuery === '' || 
+      brand.name.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    // Filter by selected countries
+    const matchesCountry = 
+      selectedCountries.length === 0 || 
+      selectedCountries.includes(brand.country);
+    
+    // Filter by selected styles
+    const matchesStyle = 
+      selectedStyles.length === 0 || 
+      selectedStyles.includes(brand.style);
+    
+    // Filter by selected price ranges
+    const matchesPriceRange = 
+      selectedPriceRanges.length === 0 || 
+      selectedPriceRanges.includes(brand.priceRange);
+    
+    return matchesSearch && matchesCountry && matchesStyle && matchesPriceRange;
+  });
+  
+  const activeFilterCount = selectedCountries.length + selectedStyles.length + selectedPriceRanges.length;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -67,6 +236,54 @@ const Shop = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
+            
+            <Popover open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+              <PopoverTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Filter className="h-4 w-4" />
+                  <span className="hidden sm:inline">Filter</span>
+                  {activeFilterCount > 0 && (
+                    <Badge className="ml-1" variant="secondary">{activeFilterCount}</Badge>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-80">
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="font-semibold text-lg">Filters</h2>
+                  {activeFilterCount > 0 && (
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      onClick={clearAllFilters}
+                      className="text-xs flex items-center"
+                    >
+                      <X className="h-3 w-3 mr-1" /> Clear All
+                    </Button>
+                  )}
+                </div>
+                
+                <FilterSection 
+                  title="Country" 
+                  options={COUNTRIES} 
+                  selectedFilters={selectedCountries}
+                  onFilterChange={(option) => toggleFilter('country', option)}
+                />
+                
+                <FilterSection 
+                  title="Style" 
+                  options={STYLES} 
+                  selectedFilters={selectedStyles}
+                  onFilterChange={(option) => toggleFilter('style', option)}
+                />
+                
+                <FilterSection 
+                  title="Price Range" 
+                  options={PRICE_RANGES} 
+                  selectedFilters={selectedPriceRanges}
+                  onFilterChange={(option) => toggleFilter('price', option)}
+                />
+              </PopoverContent>
+            </Popover>
             
             <Popover>
               <PopoverTrigger asChild>
@@ -88,17 +305,25 @@ const Shop = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {BRANDS
-            .filter(brand => 
-              searchQuery === '' || 
-              brand.name.toLowerCase().includes(searchQuery.toLowerCase())
-            )
-            .map(brand => (
+        {filteredBrands.length > 0 ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            {filteredBrands.map(brand => (
               <BrandSquare key={brand.name} brand={brand} />
-            ))
-          }
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <h3 className="text-lg font-medium mb-2">No brands match your filters</h3>
+            <p className="text-muted-foreground">Try adjusting your search or filter criteria</p>
+            <Button 
+              variant="outline" 
+              className="mt-4" 
+              onClick={clearAllFilters}
+            >
+              Clear Filters
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

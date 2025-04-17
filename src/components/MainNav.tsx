@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
@@ -9,7 +10,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, Search } from "lucide-react";
+import { ShoppingCart, User, Search, Cog } from "lucide-react";
 
 const MainNav = () => {
   return (
@@ -32,6 +33,9 @@ const MainNav = () => {
           </Button>
           <Button variant="ghost" size="icon" aria-label="Account">
             <User className="h-5 w-5" />
+          </Button>
+          <Button variant="ghost" size="icon" aria-label="The Wheel" onClick={() => window.location.href = '/settings'}>
+            <Cog className="h-5 w-5" />
           </Button>
           <Button variant="ghost" size="icon" aria-label="Shopping Cart">
             <ShoppingCart className="h-5 w-5" />

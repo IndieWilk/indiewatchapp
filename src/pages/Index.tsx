@@ -85,7 +85,7 @@ const Index = () => {
             IndieWatch
           </h1>
           <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-            The All-in-one app for watch lovers
+            The All-in-one app for watch lovers, learn more and support the worlds best independently ran watch brands.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -154,3 +154,4 @@ const Index = () => {
 };
 
 export default Index;
+

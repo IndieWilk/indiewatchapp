@@ -159,9 +159,11 @@ const Index = () => {
                 <ShoppingBag className="mr-2 h-5 w-5" /> Super-cool watches here!
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              <MessageSquare className="mr-2 h-5 w-5" /> Join Community
-            </Button>
+            <Link to="/community">
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                <MessageSquare className="mr-2 h-5 w-5" /> Join Community
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -7,6 +6,25 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, Clock, MessageSquare, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import User from '@/components/User';
+
+const BrandCard = ({ name }: { name: string }) => (
+  <Card className="overflow-hidden group transition-all hover:shadow-md">
+    <div className="aspect-square bg-muted relative overflow-hidden">
+      <img 
+        src="https://images.unsplash.com/photo-1549482199-bc1ca6f58502?q=80&w=500" 
+        alt={`${name} Brand`} 
+        className="object-cover w-full h-full transition-transform group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
+        <Button size="sm" variant="default">Explore</Button>
+      </div>
+    </div>
+    <CardContent className="p-4">
+      <h3 className="font-medium mb-1">{name}</h3>
+      <p className="text-muted-foreground text-sm">Independent Watch Brand</p>
+    </CardContent>
+  </Card>
+);
 
 const FeaturedProduct = () => (
   <Card className="overflow-hidden group transition-all hover:shadow-md">
@@ -73,11 +91,12 @@ const ArticlePreview = () => (
 );
 
 const Index = () => {
+  const brands = ['Baltic', 'Maen', 'Norqain', 'Beaucroft', 'Farer', 'Serica'];
+
   return (
     <div className="flex flex-col min-h-screen">
       <MainNav />
       
-      {/* Hero Section */}
       <section className="py-16 px-4 md:py-24 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
           <Logo className="mx-auto mb-6 w-16 h-16 md:w-24 md:h-24" />
@@ -98,11 +117,9 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Featured Sections Preview */}
       <section className="py-16 px-4 bg-card/50">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12">
-            {/* Shop Section Preview */}
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Discover Brands</h2>
@@ -111,13 +128,12 @@ const Index = () => {
                 </Link>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {[1, 2, 3, 4].map((i) => (
-                  <FeaturedProduct key={i} />
+                {brands.map((brand) => (
+                  <BrandCard key={brand} name={brand} />
                 ))}
               </div>
             </div>
             
-            {/* Community Section Preview */}
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Community Discussions</h2>
@@ -132,7 +148,6 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Content Section Preview */}
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Latest Articles</h2>
@@ -154,4 +169,3 @@ const Index = () => {
 };
 
 export default Index;
-

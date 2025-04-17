@@ -82,7 +82,6 @@ const ArticlePreview = () => (
     </div>
     <CardContent className="p-4">
       <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-        <Clock className="h-3 w-3" />
         <span>8 min read</span>
       </div>
       <h3 className="font-medium mb-1">The Rise of Independent Watchmaking</h3>

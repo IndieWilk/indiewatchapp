@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
@@ -6,7 +7,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { 
   ChevronRight, 
   ShoppingBag, 
-  MessageSquare
+  MessageSquare,
+  RectangleHorizontal
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import User from '@/components/User';
@@ -160,7 +162,6 @@ const Index = () => {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Discover Brands</h2>
-                
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {brands.map((brand) => (
@@ -169,8 +170,10 @@ const Index = () => {
               </div>
               
               <div className="flex justify-center mt-6">
-                <Link to="/shop" className="text-primary flex items-center">
-                  View All <ChevronRight className="h-4 w-4 ml-1" />
+                <Link to="/shop" className="text-primary">
+                  <Button variant="outline" className="flex items-center">
+                    <RectangleHorizontal className="mr-2 h-4 w-4" /> View All Brands
+                  </Button>
                 </Link>
               </div>
             </div>

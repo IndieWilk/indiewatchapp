@@ -108,7 +108,62 @@ const BRAND_PRODUCTS = {
     { name: "Mastergraph", image: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=500&h=500&fit=crop", rrp: 595 },
     { name: "P-51", image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop", rrp: 425 }
   ],
-  // Add similar product arrays for other brands...
+  farer: [
+    { name: "Bernina Hand-Wound", image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop", rrp: 875 },
+    { name: "Lander IV", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 995 },
+    { name: "Carnegie Chronograph", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 1680 },
+    { name: "Stanhope", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 895 },
+    { name: "Durham", image: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=500&h=500&fit=crop", rrp: 945 }
+  ],
+  halios: [
+    { name: "Universa", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 735 },
+    { name: "Fairwind", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 775 },
+    { name: "Seaforth", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 725 },
+    { name: "Tropik B", image: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=500&h=500&fit=crop", rrp: 695 }
+  ],
+  lorier: [
+    { name: "Neptune IV", image: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=500&h=500&fit=crop", rrp: 499 },
+    { name: "Falcon IV", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 499 },
+    { name: "Hyperion", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 499 },
+    { name: "Gemini", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 599 }
+  ],
+  monta: [
+    { name: "Skyquest", image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop", rrp: 2190 },
+    { name: "Oceanking", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 2190 },
+    { name: "Atlas", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 1950 },
+    { name: "Noble", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 1750 }
+  ],
+  autodromo: [
+    { name: "Group B", image: "https://images.unsplash.com/photo-1569411032431-07598b0012c2?w=500&h=500&fit=crop", rrp: 995 },
+    { name: "Intereuropa", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 1250 },
+    { name: "Monoposto", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 875 },
+    { name: "Group B Night Stage", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 1100 }
+  ],
+  kurono: [
+    { name: "Grand Akane", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 3300 },
+    { name: "Chronograph 2", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 3993 },
+    { name: "Bunkyō Tokyo", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 1738 }
+  ],
+  anordain: [
+    { name: "Model 1", image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop", rrp: 1950 },
+    { name: "Model 2", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 1850 },
+    { name: "Model 3", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 1750 }
+  ],
+  beaucroft: [
+    { name: "Modernist", image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop", rrp: 2500 },
+    { name: "Classic", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 2200 },
+    { name: "Sport", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 2400 }
+  ],
+  "nivada grenchen": [
+    { name: "Chronomaster", image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop", rrp: 1850 },
+    { name: "Antarctic", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 795 },
+    { name: "Depthmaster", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 1095 }
+  ],
+  norqain: [
+    { name: "Freedom 60", image: "https://images.unsplash.com/photo-1548096805-f63cf22ed46d?w=500&h=500&fit=crop", rrp: 2990 },
+    { name: "Adventure Sport", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 2490 },
+    { name: "Independence 22", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 3990 }
+  ]
 };
 
 const BrandPage = () => {

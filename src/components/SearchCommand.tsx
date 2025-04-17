@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -43,7 +42,6 @@ export function SearchCommand() {
   const handleSearch = (value: string) => {
     setSearchQuery(value);
     
-    // If user has typed at least 2 characters
     if (value.length >= 2) {
       const matchingBrand = BRANDS.find(
         brand => brand.name.toLowerCase() === value.toLowerCase()
@@ -60,13 +58,10 @@ export function SearchCommand() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex h-10 w-full items-center justify-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Search className="h-4 w-4" />
-          <span>Search brands...</span>
-        </div>
-        <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+        <Search className="h-4 w-4 text-muted-foreground" />
+        <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex ml-2">
           <span className="text-xs">⌘</span>K
         </kbd>
       </button>

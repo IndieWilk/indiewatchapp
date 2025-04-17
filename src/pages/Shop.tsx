@@ -66,6 +66,21 @@ const BRANDS: Brand[] = [
     name: "Anordain", 
     country: "UK",
     image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop"
+  },
+  { 
+    name: "Beaucroft", 
+    country: "Switzerland",
+    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop"
+  },
+  { 
+    name: "Nivada Grenchen", 
+    country: "Switzerland",
+    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop"
+  },
+  { 
+    name: "Norqain", 
+    country: "Switzerland",
+    image: "https://images.unsplash.com/photo-1569411032431-07598b0012c2?w=500&h=500&fit=crop"
   }
 ];
 

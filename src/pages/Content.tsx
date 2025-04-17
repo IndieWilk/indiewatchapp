@@ -118,7 +118,6 @@ const Content = () => {
       <MainNav />
       
       <div className="flex-1 container mx-auto px-4 py-8">
-        {/* Explainer Section */}
         <div className="bg-primary/10 rounded-lg p-8 text-center mb-12">
           <h1 className="text-3xl font-bold mb-4 text-foreground">
             Independent Watch News Hub
@@ -129,7 +128,7 @@ const Content = () => {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <h2 className="text-3xl font-bold mb-4 md:mb-0">Latest Articles</h2>
+          <h2 className="text-3xl font-bold mb-4 md:mb-0">Latest News</h2>
           
           <div className="flex flex-wrap gap-3">
             <Button variant="outline" size="sm" className="rounded-full">All</Button>

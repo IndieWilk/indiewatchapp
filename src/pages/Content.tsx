@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
@@ -119,32 +118,14 @@ const Content = () => {
       <MainNav />
       
       <div className="flex-1 container mx-auto px-4 py-8">
-        {/* Hero Featured Article */}
-        <div className="relative rounded-lg overflow-hidden mb-12">
-          <div className="aspect-[21/9] md:aspect-[3/1]">
-            <img 
-              src={FEATURED_ARTICLE.image} 
-              alt={FEATURED_ARTICLE.title} 
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent flex flex-col justify-end p-6 md:p-8">
-            <div className="max-w-2xl">
-              <div className="inline-block px-3 py-1 bg-primary text-primary-foreground rounded-full text-sm font-medium mb-4">
-                {FEATURED_ARTICLE.category}
-              </div>
-              <h1 className="text-2xl md:text-4xl font-bold mb-3 text-white">{FEATURED_ARTICLE.title}</h1>
-              <p className="text-lg text-white/80 mb-4">{FEATURED_ARTICLE.snippet}</p>
-              <div className="flex items-center gap-4 text-white/70 mb-4">
-                <span>By {FEATURED_ARTICLE.author}</span>
-                <span>•</span>
-                <span>{FEATURED_ARTICLE.date}</span>
-                <span>•</span>
-                <span className="flex items-center"><Clock className="h-4 w-4 mr-1" /> {FEATURED_ARTICLE.readTime}</span>
-              </div>
-              <Button size="lg">Read Feature</Button>
-            </div>
-          </div>
+        {/* Explainer Section */}
+        <div className="bg-primary/10 rounded-lg p-8 text-center mb-12">
+          <h1 className="text-3xl font-bold mb-4 text-foreground">
+            Independent Watch News Hub
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Our app pulls all the latest news of the independent watch world into one place.
+          </p>
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">

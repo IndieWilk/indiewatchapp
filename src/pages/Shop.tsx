@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -88,19 +89,21 @@ const COUNTRIES = Array.from(new Set(BRANDS.map(brand => brand.country)));
 
 const BrandSquare = ({ brand }: { brand: Brand }) => {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50 group cursor-pointer">
-      <AspectRatio ratio={1 / 1}>
-        <img 
-          src={brand.image} 
-          alt={`${brand.name} watch`}
-          className="object-cover w-full h-full transition-transform group-hover:scale-105"
-        />
-      </AspectRatio>
-      <CardContent className="p-4">
-        <h3 className="font-medium text-lg">{brand.name}</h3>
-        <Badge variant="secondary" className="mt-1 text-xs">{brand.country}</Badge>
-      </CardContent>
-    </Card>
+    <Link to={`/shop/${brand.name.toLowerCase()}`}>
+      <Card className="overflow-hidden transition-all hover:shadow-md border-2 border-primary/30 hover:border-primary/50 group cursor-pointer">
+        <AspectRatio ratio={1 / 1}>
+          <img 
+            src={brand.image} 
+            alt={`${brand.name} watch`}
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </AspectRatio>
+        <CardContent className="p-4">
+          <h3 className="font-medium text-lg">{brand.name}</h3>
+          <Badge variant="secondary" className="mt-1 text-xs">{brand.country}</Badge>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 

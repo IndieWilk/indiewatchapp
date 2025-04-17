@@ -1,11 +1,13 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import Logo from '@/components/Logo';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col justify-center items-center px-4 py-16">
       <div className="max-w-2xl text-center">
+        <Logo className="mx-auto mb-6 w-24 h-24" />
         <h1 className="text-5xl font-bold mb-6 text-primary">
           IndieWatch
         </h1>

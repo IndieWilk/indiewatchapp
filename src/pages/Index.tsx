@@ -9,7 +9,7 @@ import {
   MessageSquare, 
   ShoppingBag, 
   Watch, 
-  Stopwatch, 
+  Timer, 
   TimerReset, 
   Gauge 
 } from 'lucide-react';
@@ -136,7 +136,7 @@ const Index = () => {
           <div className="flex justify-center items-center mb-6 relative">
             <div className="absolute left-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
               <Watch className="text-primary/50 w-10 h-10 animate-pulse" />
-              <Stopwatch className="text-primary/50 w-10 h-10 animate-pulse delay-300" />
+              <Clock className="text-primary/50 w-10 h-10 animate-pulse delay-300" />
             </div>
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
               <TimerReset className="text-primary/50 w-10 h-10 animate-pulse delay-150" />

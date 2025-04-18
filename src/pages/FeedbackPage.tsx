@@ -30,7 +30,7 @@ const FeedbackPage = () => {
           <Textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Type message here"
+            placeholder="Tell us how we can improve"
             className="min-h-[150px]"
           />
           <Button 

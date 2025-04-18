@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, ShoppingBag, Users, Newspaper, Gift } from 'lucide-react';
+import { Home, ShoppingBag, Users, Newspaper, Clock, Cog } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const BottomNav = () => {
@@ -30,7 +30,12 @@ const BottomNav = () => {
     },
     {
       name: 'The Wheel',
-      icon: Gift,
+      icon: () => (
+        <div className="relative">
+          <Clock className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5 w-5" />
+          <Cog className="h-5 w-5 opacity-50" />
+        </div>
+      ),
       path: '/wheel',
     },
   ];
@@ -40,6 +45,10 @@ const BottomNav = () => {
       <div className="flex justify-around items-center h-16">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
+          const IconComponent = typeof item.icon === 'function' 
+            ? item.icon 
+            : (Icon => <Icon className="h-5 w-5 mb-1" />);
+          
           return (
             <Link
               key={item.name}
@@ -51,7 +60,9 @@ const BottomNav = () => {
                   : "text-muted-foreground hover:text-primary transition-colors"
               )}
             >
-              <item.icon className="h-5 w-5 mb-1" />
+              {typeof item.icon === 'function' 
+                ? <div className="mb-1">{IconComponent}</div>
+                : <IconComponent />}
               <span className="text-xs">{item.name}</span>
             </Link>
           );
@@ -62,3 +73,4 @@ const BottomNav = () => {
 };
 
 export default BottomNav;
+

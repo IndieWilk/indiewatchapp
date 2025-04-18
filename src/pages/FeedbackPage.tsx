@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 import MainNav from "@/components/MainNav";
-import { Bug } from 'lucide-react';
 
 const FeedbackPage = () => {
   const [message, setMessage] = useState('');
@@ -56,7 +54,6 @@ const FeedbackPage = () => {
             variant="outline"
             className="w-full mt-2"
           >
-            <Bug className="mr-2 h-4 w-4" />
             Report Bug
           </Button>
         </div>
@@ -66,4 +63,3 @@ const FeedbackPage = () => {
 };
 
 export default FeedbackPage;
-

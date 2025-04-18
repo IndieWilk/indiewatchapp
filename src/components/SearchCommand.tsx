@@ -6,6 +6,8 @@ import {
   CommandInput,
   CommandList,
   CommandEmpty,
+  CommandGroup,
+  CommandItem,
 } from "@/components/ui/command";
 import { Search } from 'lucide-react';
 
@@ -40,12 +42,23 @@ export function SearchCommand() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  const filteredBrands = BRANDS.filter(brand =>
+    brand.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const handleSearch = (value: string) => {
     setSearchQuery(value);
-    
-    if (value.length >= 2) {
+  };
+
+  const handleSelect = (brandName: string) => {
+    setOpen(false);
+    navigate(`/shop/${brandName.toLowerCase()}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && searchQuery.length >= 2) {
       const matchingBrand = BRANDS.find(
-        brand => brand.name.toLowerCase() === value.toLowerCase()
+        brand => brand.name.toLowerCase() === searchQuery.toLowerCase()
       );
       
       if (matchingBrand) {
@@ -68,9 +81,25 @@ export function SearchCommand() {
           placeholder="Type a brand name..." 
           value={searchQuery}
           onValueChange={handleSearch}
+          onKeyDown={handleKeyDown}
         />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
+          {searchQuery.length > 0 && (
+            <CommandGroup heading="Suggestions">
+              {filteredBrands.map((brand) => (
+                <CommandItem
+                  key={brand.name}
+                  onSelect={() => handleSelect(brand.name)}
+                >
+                  <span>{brand.name}</span>
+                  <span className="ml-2 text-muted-foreground text-sm">
+                    {brand.country}
+                  </span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          )}
         </CommandList>
       </CommandDialog>
     </>

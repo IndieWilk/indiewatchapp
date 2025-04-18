@@ -12,8 +12,8 @@ import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
 import FeedbackPage from "./pages/FeedbackPage";
-import BottomNav from "./components/BottomNav";
 import SecurityPage from "./pages/SecurityPage";
+import WheelPage from "./pages/WheelPage";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +30,7 @@ const App = () => (
             <Route path="/shop/:brandName" element={<BrandPage />} />
             <Route path="/community" element={<Community />} />
             <Route path="/content" element={<Content />} />
-            <Route path="/wheel" element={<Index />} />
+            <Route path="/wheel" element={<WheelPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/feedback" element={<FeedbackPage />} />

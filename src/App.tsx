@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +15,7 @@ import ProfilePage from "./pages/ProfilePage";
 import FeedbackPage from "./pages/FeedbackPage";
 import SecurityPage from "./pages/SecurityPage";
 import WheelPage from "./pages/WheelPage";
+import BottomNav from "./components/BottomNav";
 
 const queryClient = new QueryClient();
 

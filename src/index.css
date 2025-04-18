@@ -16,20 +16,20 @@
     --popover: 197 89% 10%;
     --popover-foreground: 210 40% 98%;
     
-    --secondary: 197 60% 40%; /* Lighter blue for nav bars */
+    --secondary: 197 89% 56%; /* Now matches the 'Cool Watches' button blue */
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 197 30% 35%; /* Adjusted for lighter nav bars */
+    --muted: 197 89% 56%; /* Matches secondary for consistency */
     --muted-foreground: 197 10% 80%;
     
-    --accent: 197 89% 35%; /* Slightly lighter accent */
+    --accent: 197 89% 56%; /* Matches the button blue */
     --accent-foreground: 0 0% 98%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 197 30% 40%; /* Adjusted border for lighter nav */
-    --input: 197 30% 40%;
+    --border: 197 89% 56%; /* Matches the button blue */
+    --input: 197 89% 56%;
     --ring: 197 89% 60%;
     --radius: 0.5rem;
   }

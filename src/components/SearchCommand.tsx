@@ -70,12 +70,13 @@ export function SearchCommand() {
 
   return (
     <>
-      <button
+      <div 
         onClick={() => setOpen(true)}
-        className="flex items-center justify-center"
+        className="flex items-center gap-2 w-[300px] px-4 py-2 bg-muted/50 rounded-full cursor-pointer hover:bg-muted/80 transition-colors"
       >
-        <Search className="h-5 w-5 text-muted-foreground" />
-      </button>
+        <Search className="h-4 w-4 text-muted-foreground shrink-0" />
+        <span className="text-sm text-muted-foreground">Search brands...</span>
+      </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput 
           placeholder="Type a brand name..." 

@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
-import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -21,7 +20,7 @@ const MainNav = () => {
   return (
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link to="/" className="flex items-center gap-2 mr-4">
+        <Link to="/" className="flex items-center gap-2">
           <Logo className="h-10 w-10 rounded-md overflow-hidden shadow-md transition-transform hover:scale-105" />
         </Link>
         
@@ -31,9 +30,11 @@ const MainNav = () => {
           </NavigationMenuList>
         </NavigationMenu>
         
-        <div className="flex items-center ml-auto space-x-4">
+        <div className="flex-1 flex justify-center">
           <SearchCommand />
-          
+        </div>
+        
+        <div className="flex items-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Profile">
@@ -74,4 +75,3 @@ const MainNav = () => {
 };
 
 export default MainNav;
-

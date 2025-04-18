@@ -6,12 +6,9 @@ import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, Cog } from "lucide-react";
+import { ShoppingCart, User } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -59,12 +56,14 @@ const MainNav = () => {
                   Security and Safety
                 </Link>
               </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to="/settings" className="flex items-center">
+                  Settings
+                </Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="ghost" size="icon" aria-label="The Wheel">
-            <Cog className="h-5 w-5" />
-          </Button>
           <Button variant="ghost" size="icon" aria-label="Shopping Cart">
             <ShoppingCart className="h-5 w-5" />
             <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-primary-foreground">

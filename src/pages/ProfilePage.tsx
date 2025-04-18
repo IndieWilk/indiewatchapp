@@ -1,8 +1,7 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { User, Mail, Lock, Bell, Shield, CreditCard, Heart } from "lucide-react";
+import { User, Mail, Lock, Bell, Shield, CreditCard } from "lucide-react";
 
 const ProfilePage = () => {
   return (
@@ -66,16 +65,6 @@ const ProfilePage = () => {
             <div>
               <h2 className="font-semibold">Payment Methods</h2>
               <p className="text-sm text-muted-foreground">Manage your payment options</p>
-            </div>
-          </a>
-        </Card>
-
-        <Card className="p-4 hover:shadow-md transition-shadow">
-          <a href="/profile/wishlist" className="flex items-center">
-            <Heart className="h-5 w-5 mr-4" />
-            <div>
-              <h2 className="font-semibold">Wishlist</h2>
-              <p className="text-sm text-muted-foreground">View your saved items</p>
             </div>
           </a>
         </Card>

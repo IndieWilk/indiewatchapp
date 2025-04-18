@@ -1,4 +1,4 @@
-
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
@@ -47,6 +47,16 @@ const MainNav = () => {
               <DropdownMenuItem>
                 <Link to="/profile" className="flex items-center">
                   My Profile
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to="/wishlist" className="flex items-center">
+                  My Wishlist
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to="/security" className="flex items-center">
+                  Security
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>

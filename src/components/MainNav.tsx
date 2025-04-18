@@ -56,7 +56,7 @@ const MainNav = () => {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link to="/security" className="flex items-center">
-                  Security
+                  Security and Safety
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>

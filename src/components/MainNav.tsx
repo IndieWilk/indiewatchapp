@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -65,9 +64,11 @@ const MainNav = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="ghost" size="icon" aria-label="Shopping Cart">
-            <ShoppingCart className="h-5 w-5" />
-          </Button>
+          <Link to="/cart">
+            <Button variant="ghost" size="icon" aria-label="Shopping Cart">
+              <ShoppingCart className="h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

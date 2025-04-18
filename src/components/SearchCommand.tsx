@@ -58,10 +58,9 @@ export function SearchCommand() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex h-8 w-8 items-center justify-center rounded-md border border-input bg-background p-1 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex items-center justify-center text-muted-foreground"
       >
-        <Search className="h-4 w-4 text-muted-foreground" />
-        <kbd className="hidden">⌘K</kbd>
+        <Search className="h-5 w-5" />
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput 

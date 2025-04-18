@@ -59,9 +59,9 @@ export function SearchCommand() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center justify-center text-muted-foreground"
+        className="flex items-center justify-center"
       >
-        <Search className="h-5 w-5" />
+        <Search className="h-5 w-5 text-muted-foreground" />
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput 

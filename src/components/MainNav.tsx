@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -44,17 +43,12 @@ const MainNav = () => {
             <DropdownMenuContent align="end">
               <DropdownMenuItem>
                 <Link to="/profile" className="flex items-center">
-                  My Profile
+                  Profile and Settings
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link to="/security" className="flex items-center">
                   Security and Safety
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/settings" className="flex items-center">
-                  Settings
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>

@@ -9,7 +9,6 @@ import Shop from "./pages/Shop";
 import BrandPage from "./pages/BrandPage";
 import Community from "./pages/Community";
 import Content from "./pages/Content";
-import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -30,7 +29,7 @@ const App = () => (
             <Route path="/shop/:brandName" element={<BrandPage />} />
             <Route path="/community" element={<Community />} />
             <Route path="/content" element={<Content />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/wheel" element={<Index />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<NotFound />} />

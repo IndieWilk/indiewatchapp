@@ -31,7 +31,7 @@ const BottomNav = () => {
     {
       name: 'The Wheel',
       icon: Gift,
-      path: '/settings',
+      path: '/wheel',
     },
   ];
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 import MainNav from "@/components/MainNav";
+import { Bug } from 'lucide-react';
 
 const FeedbackPage = () => {
   const [message, setMessage] = useState('');
@@ -16,6 +17,17 @@ const FeedbackPage = () => {
     
     // For now just show a success message
     toast.success("Thank you for your feedback!");
+    setMessage('');
+  };
+
+  const handleReportBug = () => {
+    if (!message.trim()) {
+      toast.error("Please describe the bug");
+      return;
+    }
+    
+    // For now just show a success message
+    toast.success("Bug report submitted. Thank you!");
     setMessage('');
   };
 
@@ -39,6 +51,14 @@ const FeedbackPage = () => {
           >
             Send Feedback
           </Button>
+          <Button 
+            onClick={handleReportBug}
+            variant="outline"
+            className="w-full mt-2"
+          >
+            <Bug className="mr-2 h-4 w-4" />
+            Report Bug
+          </Button>
         </div>
       </div>
     </div>
@@ -46,3 +66,4 @@ const FeedbackPage = () => {
 };
 
 export default FeedbackPage;
+

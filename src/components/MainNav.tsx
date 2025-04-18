@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, MessageCircle } from "lucide-react";
+import { User, ShoppingCart } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -53,7 +53,6 @@ const MainNav = () => {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link to="/feedback" className="flex items-center">
-                  <MessageCircle className="mr-2 h-4 w-4" />
                   Feedback and Issues
                 </Link>
               </DropdownMenuItem>

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -25,7 +26,6 @@ const MainNav = () => {
       <div className="container flex h-16 items-center">
         <Link to="/" className="flex items-center gap-2 mr-4">
           <Logo className="h-10 w-10 rounded-md overflow-hidden shadow-md transition-transform hover:scale-105" />
-          <span className="text-xl font-bold text-primary">IndieWatch</span>
         </Link>
         
         <NavigationMenu className="hidden md:flex mx-6">
@@ -78,3 +78,4 @@ const MainNav = () => {
 };
 
 export default MainNav;
+

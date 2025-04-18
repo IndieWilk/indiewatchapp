@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
@@ -21,10 +22,6 @@ const MainNav = () => {
           <span className="text-xl font-bold text-primary">IndieWatch</span>
         </Link>
         
-        <div className="w-full max-w-sm px-4">
-          <SearchCommand />
-        </div>
-        
         <NavigationMenu className="hidden md:flex mx-6">
           <NavigationMenuList>
             
@@ -32,6 +29,7 @@ const MainNav = () => {
         </NavigationMenu>
         
         <div className="flex items-center ml-auto space-x-4">
+          <SearchCommand />
           <Button variant="ghost" size="icon" aria-label="Account">
             <User className="h-5 w-5" />
           </Button>

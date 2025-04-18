@@ -12,6 +12,7 @@ import Content from "./pages/Content";
 import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
+import FeedbackPage from "./pages/FeedbackPage";
 import BottomNav from "./components/BottomNav";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/wheel" element={<Index />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/feedback" element={<FeedbackPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <BottomNav />

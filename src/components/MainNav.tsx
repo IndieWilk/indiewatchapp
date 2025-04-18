@@ -12,6 +12,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, User, Cog } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const MainNav = () => {
   return (
@@ -30,9 +36,22 @@ const MainNav = () => {
         
         <div className="flex items-center ml-auto space-x-4">
           <SearchCommand />
-          <Button variant="ghost" size="icon" aria-label="Account">
-            <User className="h-5 w-5" />
-          </Button>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Profile">
+                <User className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>
+                <Link to="/profile" className="flex items-center">
+                  My Profile
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button variant="ghost" size="icon" aria-label="The Wheel">
             <Cog className="h-5 w-5" />
           </Button>

@@ -1,6 +1,7 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { User, Mail, Lock, Bell, Shield, CreditCard } from "lucide-react";
+import { User, Mail, Bell, Shield, CreditCard } from "lucide-react";
 import MainNav from "@/components/MainNav";
 
 const ProfilePage = () => {
@@ -27,16 +28,6 @@ const ProfilePage = () => {
               <div>
                 <h2 className="font-semibold">Email Preferences</h2>
                 <p className="text-sm text-muted-foreground">Update your email settings</p>
-              </div>
-            </a>
-          </Card>
-
-          <Card className="p-4 hover:shadow-md transition-shadow">
-            <a href="/profile/security" className="flex items-center">
-              <Lock className="h-5 w-5 mr-4" />
-              <div>
-                <h2 className="font-semibold">Security</h2>
-                <p className="text-sm text-muted-foreground">Manage your password and security settings</p>
               </div>
             </a>
           </Card>
@@ -77,3 +68,4 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
+

@@ -13,6 +13,7 @@ import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
+import BottomNav from "./components/BottomNav";
 
 const queryClient = new QueryClient();
 

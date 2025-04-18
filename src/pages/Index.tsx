@@ -1,16 +1,16 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import MainNav from '@/components/MainNav';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
-import MainNav from '@/components/MainNav';
-import { Card, CardContent } from '@/components/ui/card';
 import { 
   ChevronRight, 
   ShoppingBag, 
   MessageSquare,
   RectangleHorizontal
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Card, CardContent } from '@/components/ui/card';
 import User from '@/components/User';
 
 const BrandCard = ({ name, imageSrc }: { name: string; imageSrc: string }) => (
@@ -144,7 +144,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link to="/shop">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <ShoppingBag className="mr-2 h-5 w-5" /> Super-cool watches here!
+                <ShoppingBag className="mr-2 h-5 w-5" /> Cool Watches
               </Button>
             </Link>
             <Link to="/community">
@@ -213,3 +213,4 @@ const Index = () => {
 };
 
 export default Index;
+

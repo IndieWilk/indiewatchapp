@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Clock, Search, Tag } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Rss, Newspaper } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 const ARTICLES = [
@@ -82,33 +80,28 @@ const FEATURED_ARTICLE = {
 };
 
 const ArticleCard = ({ article }: { article: typeof ARTICLES[0] }) => (
-  <Card className="overflow-hidden group transition-all hover:shadow-md border-primary border-2">
-    <div className="aspect-video bg-muted relative overflow-hidden">
-      <img 
-        src={article.image} 
-        alt={article.title} 
-        className="object-cover w-full h-full transition-transform group-hover:scale-105"
-      />
-      <div className="absolute top-3 left-3">
-        <span className="px-2 py-1 bg-primary text-primary-foreground rounded-full text-xs font-medium">
-          {article.category}
-        </span>
-      </div>
-    </div>
-    <CardContent className="p-4">
-      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-        <span>{article.date}</span>
-        <span>•</span>
-        <Clock className="h-3 w-3" />
-        <span>{article.readTime}</span>
-      </div>
-      <h3 className="font-medium mb-1">{article.title}</h3>
-      <p className="text-sm text-muted-foreground mb-3">{article.snippet}</p>
-      <div className="flex items-center justify-between">
-        <span className="text-sm">By {article.author}</span>
-        <Link to={`/content/${article.id}`} className="text-primary text-sm font-medium inline-flex items-center">
-          Read <ChevronRight className="h-3 w-3 ml-1" />
-        </Link>
+  <Card className="hover:shadow-md transition-all border-primary/50 border">
+    <CardContent className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="hidden sm:block shrink-0">
+          <Newspaper className="h-6 w-6 text-muted-foreground" />
+        </div>
+        <div className="space-y-2 flex-1">
+          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <span>{article.date}</span>
+            <span>•</span>
+            <span>{article.readTime}</span>
+            <span>•</span>
+            <span>{article.category}</span>
+          </div>
+          <h3 className="text-lg font-semibold hover:text-primary transition-colors">
+            {article.title}
+          </h3>
+          <p className="text-muted-foreground">{article.snippet}</p>
+          <div className="pt-2 text-sm">
+            By <span className="text-primary">{article.author}</span>
+          </div>
+        </div>
       </div>
     </CardContent>
   </Card>
@@ -122,61 +115,34 @@ const Content = () => {
       <MainNav />
       
       <div className="flex-1 container mx-auto px-4 py-8">
-        <div className="bg-primary/10 rounded-lg p-8 text-center mb-12">
-          <h1 className="text-3xl font-bold mb-4 text-foreground">
-            Independent Watch News Hub
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            IndieWatch pulls all the latest news of the independent watch world into one place.
-          </p>
-        </div>
-        
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <h2 className="text-3xl font-bold mb-4 md:mb-0">Latest News</h2>
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+          <div className="flex items-center gap-2">
+            <Rss className="h-6 w-6 text-primary" />
+            <h1 className="text-2xl font-bold">Watch News Feed</h1>
+          </div>
           
-          <div className="relative w-full md:w-auto md:max-w-xs">
-            <div className="flex items-center rounded-md border bg-background pr-3">
-              <Input
-                type="search"
-                placeholder="Search brands..."
-                className="border-0 focus-visible:ring-0"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <Search className="h-4 w-4 text-muted-foreground" />
-            </div>
+          <div className="w-full md:w-64">
+            <Input
+              type="search"
+              placeholder="Search articles..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full"
+            />
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <div className="flex flex-wrap gap-3">
-            <Button variant="outline" size="sm" className="rounded-full">All</Button>
-            <Button variant="outline" size="sm" className="rounded-full">Reviews</Button>
-            <Button variant="outline" size="sm" className="rounded-full">Industry</Button>
-            <Button variant="outline" size="sm" className="rounded-full">History</Button>
-            <Button variant="outline" size="sm" className="rounded-full">Interviews</Button>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-4">
           {ARTICLES.map(article => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>
         
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-6">Subscribe to Our Newsletter</h3>
-          <div className="max-w-md mx-auto">
-            <p className="text-muted-foreground mb-4">Get the latest articles, reviews, and news from the world of independent watchmaking.</p>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              />
-              <Button>Subscribe</Button>
-            </div>
-          </div>
+        <div className="mt-8 flex justify-center">
+          <Button variant="outline" className="gap-2">
+            <Rss className="h-4 w-4" />
+            Load More Articles
+          </Button>
         </div>
       </div>
     </div>

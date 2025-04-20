@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
@@ -85,6 +85,16 @@ const BRANDS: Brand[] = [
   }
 ];
 
+// Utility function to shuffle array
+const shuffleArray = (array: Brand[]) => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+
 const COUNTRIES = Array.from(new Set(BRANDS.map(brand => brand.country)));
 
 const BrandSquare = ({ brand }: { brand: Brand }) => {
@@ -146,8 +156,18 @@ const Shop = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
+  const [displayedBrands, setDisplayedBrands] = useState<Brand[]>([]);
   
-  const toggleFilter = (option: string) => {
+  // Initialize with shuffled brands
+  useEffect(() => {
+    setDisplayedBrands(shuffleArray(BRANDS));
+  }, []);
+
+  const handleShuffle = () => {
+    setDisplayedBrands(shuffleArray([...displayedBrands]));
+  };
+  
+    const toggleFilter = (option: string) => {
     setSelectedCountries(prev => 
       prev.includes(option) 
         ? prev.filter(item => item !== option) 
@@ -159,7 +179,7 @@ const Shop = () => {
     setSelectedCountries([]);
   };
   
-  const filteredBrands = BRANDS.filter(brand => {
+  const filteredBrands = displayedBrands.filter(brand => {
     const matchesSearch = 
       searchQuery === '' || 
       brand.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -225,6 +245,15 @@ const Shop = () => {
                 />
               </PopoverContent>
             </Popover>
+            
+            <Button 
+              variant="outline" 
+              className="flex items-center gap-2"
+              onClick={handleShuffle}
+            >
+              <SlidersHorizontal className="h-4 w-4" />
+              <span className="hidden sm:inline">Shuffle</span>
+            </Button>
             
             <Popover>
               <PopoverTrigger asChild>

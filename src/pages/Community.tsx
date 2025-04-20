@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { User } from 'lucide-react';
-import { MessageSquare, ThumbsUp, Clock, PenLine } from 'lucide-react';
+import { User, MessageSquare, ThumbsUp, Clock, PenLine, Image } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/sonner";
 
 const COMMUNITY_POSTS = [
   {
@@ -94,6 +103,41 @@ const CommunityPost = ({ post }: { post: typeof COMMUNITY_POSTS[0] }) => (
 );
 
 const Community = () => {
+  const [posts, setPosts] = useState(COMMUNITY_POSTS);
+  const [newPost, setNewPost] = useState({
+    title: '',
+    content: '',
+    image: null as File | null
+  });
+
+  const handlePost = () => {
+    if (!newPost.title || !newPost.content) {
+      toast.error("Please fill in both title and content");
+      return;
+    }
+
+    const post = {
+      id: posts.length + 1,
+      title: newPost.title,
+      author: "CurrentUser",
+      timeAgo: "Just now",
+      content: newPost.content,
+      comments: 0,
+      upvotes: 0,
+      tags: ["New"],
+    };
+
+    setPosts([post, ...posts]);
+    setNewPost({ title: '', content: '', image: null });
+    toast.success("Post published successfully!");
+  };
+
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setNewPost(prev => ({ ...prev, image: e.target.files![0] }));
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <MainNav />
@@ -106,10 +150,64 @@ const Community = () => {
           </div>
           
           <div className="flex gap-3 mt-4 md:mt-0">
-            <Button className="gap-2">
-              <PenLine className="h-4 w-4" />
-              Create Post
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="gap-2">
+                  <PenLine className="h-4 w-4" />
+                  Create Post
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[525px]">
+                <DialogHeader>
+                  <DialogTitle>Create a New Post</DialogTitle>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="title">Title</Label>
+                    <Input
+                      id="title"
+                      placeholder="Enter your post title"
+                      value={newPost.title}
+                      onChange={(e) => setNewPost(prev => ({ ...prev, title: e.target.value }))}
+                    />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="content">Content</Label>
+                    <Textarea
+                      id="content"
+                      placeholder="Write your post content..."
+                      value={newPost.content}
+                      onChange={(e) => setNewPost(prev => ({ ...prev, content: e.target.value }))}
+                    />
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Button
+                      variant="outline"
+                      className="gap-2"
+                      onClick={() => document.getElementById('photo-input')?.click()}
+                    >
+                      <Image className="h-4 w-4" />
+                      Add Photo
+                    </Button>
+                    <input
+                      type="file"
+                      id="photo-input"
+                      className="hidden"
+                      accept="image/*"
+                      onChange={handleImageSelect}
+                    />
+                    {newPost.image && (
+                      <span className="text-sm text-muted-foreground">
+                        {newPost.image.name}
+                      </span>
+                    )}
+                  </div>
+                  <Button onClick={handlePost} className="mt-2">
+                    Publish Post
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
         
@@ -136,7 +234,7 @@ const Community = () => {
             </div>
             
             <div className="space-y-4">
-              {COMMUNITY_POSTS.map(post => (
+              {posts.map(post => (
                 <CommunityPost key={post.id} post={post} />
               ))}
             </div>

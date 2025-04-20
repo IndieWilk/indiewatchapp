@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { User, MessageSquare, ThumbsUp, Clock, PenLine, Image } from 'lucide-react';
 import {
   Dialog,
@@ -12,6 +11,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
+import { Input } from '@/components/ui/input';
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 
@@ -213,17 +213,6 @@ const Community = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="lg:col-span-3 space-y-6">
-            <Card className="border-primary border-2">
-              <CardContent className="p-4">
-                <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <User className="h-5 w-5" />
-                  </div>
-                  <Input placeholder="Start a discussion..." className="bg-muted/50" />
-                </div>
-              </CardContent>
-            </Card>
-            
             <div className="flex gap-2 overflow-x-auto pb-2">
               <Button variant="outline" size="sm" className="rounded-full whitespace-nowrap">All Posts</Button>
               <Button variant="outline" size="sm" className="rounded-full whitespace-nowrap">Hot</Button>

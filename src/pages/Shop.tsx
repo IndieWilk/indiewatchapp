@@ -13,7 +13,8 @@ import {
   Search, 
   Shuffle,
   Filter,
-  X
+  X,
+  SlidersHorizontal
 } from 'lucide-react';
 
 interface Brand {

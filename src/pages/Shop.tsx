@@ -11,7 +11,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { 
   ChevronDown, 
   Search, 
-  SlidersHorizontal, 
+  Shuffle,
   Filter,
   X
 } from 'lucide-react';
@@ -85,7 +85,6 @@ const BRANDS: Brand[] = [
   }
 ];
 
-// Utility function to shuffle array
 const shuffleArray = (array: Brand[]) => {
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
@@ -158,7 +157,6 @@ const Shop = () => {
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
   const [displayedBrands, setDisplayedBrands] = useState<Brand[]>([]);
   
-  // Initialize with shuffled brands
   useEffect(() => {
     setDisplayedBrands(shuffleArray(BRANDS));
   }, []);
@@ -167,7 +165,7 @@ const Shop = () => {
     setDisplayedBrands(shuffleArray([...displayedBrands]));
   };
   
-    const toggleFilter = (option: string) => {
+  const toggleFilter = (option: string) => {
     setSelectedCountries(prev => 
       prev.includes(option) 
         ? prev.filter(item => item !== option) 
@@ -251,7 +249,7 @@ const Shop = () => {
               className="flex items-center gap-2"
               onClick={handleShuffle}
             >
-              <SlidersHorizontal className="h-4 w-4" />
+              <Shuffle className="h-4 w-4" />
               <span className="hidden sm:inline">Shuffle</span>
             </Button>
             

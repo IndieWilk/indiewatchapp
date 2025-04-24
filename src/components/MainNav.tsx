@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -26,11 +25,11 @@ const MainNav = () => {
         
         <Button 
           variant="outline" 
-          size="icon" 
-          className="ml-4 hover:bg-primary/10"
+          className="ml-4 hover:bg-primary/10 gap-2"
           title="Random Watch"
         >
           <Watch className="h-5 w-5 text-primary" />
+          Random Watch
         </Button>
         
         <NavigationMenu className="hidden md:flex mx-6">
@@ -81,4 +80,3 @@ const MainNav = () => {
 };
 
 export default MainNav;
-

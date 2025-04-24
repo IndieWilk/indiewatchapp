@@ -33,7 +33,7 @@ const ProductCard = ({ name, image, rrp, brand }: ProductCardProps) => {
           />
         </AspectRatio>
         <CardContent className="p-4">
-          <h3 className="font-semibold mb-2">{name}</h3>
+          <h2 className="text-2xl font-bold mb-3">{name}</h2>
           <Badge variant="secondary">RRP: {formatPrice(rrp)}</Badge>
         </CardContent>
       </Card>

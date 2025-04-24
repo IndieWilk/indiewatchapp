@@ -1,5 +1,6 @@
+
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
 import {
   NavigationMenu,
@@ -15,7 +16,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+// Define available brands
+const BRANDS = [
+  "baltic", "brew", "farer", "halios", "lorier", "monta", 
+  "autodromo", "kurono", "anordain", "beaucroft", 
+  "nivada-grenchen", "norqain"
+];
+
 const MainNav = () => {
+  const navigate = useNavigate();
+
+  const handleRandomWatch = () => {
+    const randomBrand = BRANDS[Math.floor(Math.random() * BRANDS.length)];
+    navigate(`/shop/${randomBrand}`);
+  };
+
   return (
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -27,6 +42,7 @@ const MainNav = () => {
           variant="outline" 
           className="ml-4 hover:bg-primary/10 gap-2"
           title="Random Watch"
+          onClick={handleRandomWatch}
         >
           <Watch className="h-5 w-5 text-primary" />
           Random Watch

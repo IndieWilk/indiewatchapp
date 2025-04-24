@@ -4,7 +4,7 @@ import MainNav from '@/components/MainNav';
 import { Button } from '@/components/ui/button';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, ArrowLeft } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, Ticket } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface Product {
@@ -96,6 +96,10 @@ const formatPrice = (price: number) => {
   }).format(price);
 };
 
+const calculatePrizeEntries = (price: number) => {
+  return Math.floor((price / 100) * 5);
+};
+
 const ProductPage = () => {
   const { brandName, productSlug } = useParams();
   
@@ -104,9 +108,12 @@ const ProductPage = () => {
   const product = products?.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === productSlug);
 
   const handleAddToCart = () => {
-    toast.success("Added to cart", {
-      description: `${product?.name} has been added to your cart`
-    });
+    if (product) {
+      const entries = calculatePrizeEntries(product.rrp);
+      toast.success("Added to cart", {
+        description: `${product.name} has been added to your cart. You'll receive ${entries} prize draw entries!`
+      });
+    }
   };
 
   if (!product) {
@@ -119,6 +126,8 @@ const ProductPage = () => {
       </div>
     );
   }
+
+  const prizeEntries = calculatePrizeEntries(product.rrp);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -158,6 +167,13 @@ const ProductPage = () => {
               <p className="text-gray-600">
                 A beautifully crafted timepiece from {product.brand}, the {product.name} represents 
                 the perfect blend of traditional watchmaking and contemporary design.
+              </p>
+            </div>
+
+            <div className="bg-primary/10 p-4 rounded-lg flex items-center gap-2">
+              <Ticket className="h-5 w-5 text-primary" />
+              <p className="text-sm">
+                Get <span className="font-bold">{prizeEntries} entries</span> to our monthly prize draw with this purchase!
               </p>
             </div>
 

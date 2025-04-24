@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
@@ -156,10 +157,12 @@ const ProductPage = () => {
           </div>
 
           <div className="space-y-6">
+            {/* Prominently display the product name */}
             <div>
-              <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+              <h1 className="text-4xl font-bold mb-4 text-primary">{product.name}</h1>
+              <h2 className="text-2xl font-semibold text-muted-foreground mb-2">{product.brand}</h2>
               <Badge variant="secondary" className="text-lg px-3 py-1">
-                {formatPrice(product.rrp)}
+                RRP: {formatPrice(product.rrp)}
               </Badge>
             </div>
 
@@ -193,3 +196,4 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+

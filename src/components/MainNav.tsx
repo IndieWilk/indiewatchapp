@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -17,25 +16,59 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 
-// Define available brands
 const BRANDS = [
   "baltic", "brew", "farer", "halios", "lorier", "monta", 
   "autodromo", "kurono", "anordain", "beaucroft", 
   "nivada-grenchen", "norqain"
 ];
 
+const BRAND_PRODUCTS = {
+  baltic: [
+    { name: "Aquascaphe Dual-Crown", slug: "aquascaphe-dual-crown" },
+    { name: "Bicompax 002", slug: "bicompax-002" },
+    { name: "HMS 002", slug: "hms-002" }
+  ],
+  brew: [
+    { name: "Retromatic", slug: "retromatic" },
+    { name: "Metric", slug: "metric" },
+    { name: "Retrograph", slug: "retrograph" }
+  ],
+  farer: [
+    { name: "Bernina Hand-Wound", slug: "bernina-hand-wound" },
+    { name: "Lander IV", slug: "lander-iv" },
+    { name: "Carnegie Chronograph", slug: "carnegie-chronograph" }
+  ],
+  lorier: [
+    { name: "Neptune IV", slug: "neptune-iv" },
+    { name: "Falcon IV", slug: "falcon-iv" },
+    { name: "Hyperion", slug: "hyperion" }
+  ],
+  monta: [
+    { name: "Skyquest", slug: "skyquest" },
+    { name: "Oceanking", slug: "oceanking" },
+    { name: "Atlas", slug: "atlas" }
+  ],
+  halios: [
+    { name: "Universa", slug: "universa" },
+    { name: "Fairwind", slug: "fairwind" },
+    { name: "Seaforth", slug: "seaforth" }
+  ]
+};
+
 const MainNav = () => {
   const navigate = useNavigate();
 
   const handleRandomWatch = () => {
-    // Instead of trying to navigate to a specific watch (which doesn't exist yet),
-    // navigate to a random brand page
-    const randomBrand = BRANDS[Math.floor(Math.random() * BRANDS.length)];
-    navigate(`/shop/${randomBrand}`);
+    const availableBrands = Object.keys(BRAND_PRODUCTS);
+    const randomBrand = availableBrands[Math.floor(Math.random() * availableBrands.length)];
     
-    // Show a toast to inform the user what happened
-    toast.info(`Exploring ${randomBrand.charAt(0).toUpperCase() + randomBrand.slice(1)} watches`, {
-      description: "We'll have individual watch pages soon!"
+    const brandProducts = BRAND_PRODUCTS[randomBrand as keyof typeof BRAND_PRODUCTS];
+    const randomProduct = brandProducts[Math.floor(Math.random() * brandProducts.length)];
+    
+    navigate(`/shop/${randomBrand}/${randomProduct.slug}`);
+    
+    toast.info(`Exploring ${randomProduct.name}`, {
+      description: `From ${randomBrand.charAt(0).toUpperCase() + randomBrand.slice(1)}`
     });
   };
 

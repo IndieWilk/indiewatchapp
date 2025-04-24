@@ -170,8 +170,8 @@ const ProductPage = () => {
               </p>
             </div>
 
-            <div className="bg-primary/10 p-4 rounded-lg flex items-center gap-2">
-              <Ticket className="h-5 w-5 text-primary" />
+            <div className="bg-primary text-black p-4 rounded-lg flex items-center gap-2">
+              <Ticket className="h-5 w-5 text-black" />
               <p className="text-sm">
                 Get <span className="font-bold">{prizeEntries} entries</span> to our monthly prize draw with this purchase!
               </p>

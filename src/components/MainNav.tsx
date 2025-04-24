@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, Watch } from "lucide-react";
+import { User, ShoppingCart, Watch, Gift } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -75,15 +75,26 @@ const MainNav = () => {
           <Logo className="h-10 w-10 rounded-md overflow-hidden shadow-md transition-transform hover:scale-105" />
         </Link>
         
-        <Button 
-          variant="outline" 
-          className="ml-4 hover:bg-primary/10 gap-2"
-          title="Random Watch"
-          onClick={handleRandomWatch}
-        >
-          <Watch className="h-5 w-5 text-primary" />
-          Random Watch
-        </Button>
+        <div className="flex items-center gap-2 ml-4">
+          <Button 
+            variant="outline" 
+            className="hover:bg-primary/10 gap-2"
+            title="Random Watch"
+            onClick={handleRandomWatch}
+          >
+            <Watch className="h-5 w-5 text-primary" />
+            Random Watch
+          </Button>
+
+          <Button 
+            variant="outline" 
+            className="hover:bg-primary/10 gap-2"
+            onClick={() => navigate('/wheel')}
+          >
+            <Gift className="h-5 w-5 text-primary" />
+            Monthly Draw
+          </Button>
+        </div>
         
         <NavigationMenu className="hidden md:flex mx-6">
           <NavigationMenuList>
@@ -92,7 +103,9 @@ const MainNav = () => {
         </NavigationMenu>
         
         <div className="flex-1 flex justify-center">
-          <SearchCommand />
+          <div className="w-[200px]">
+            <SearchCommand />
+          </div>
         </div>
         
         <div className="flex items-center space-x-4">

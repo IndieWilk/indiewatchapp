@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -14,6 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { toast } from "sonner";
 
 // Define available brands
 const BRANDS = [
@@ -22,26 +24,19 @@ const BRANDS = [
   "nivada-grenchen", "norqain"
 ];
 
-// Define available watches
-const WATCHES = [
-  { brand: "Baltic", model: "Aquascaphe", path: "/shop/baltic/aquascaphe" },
-  { brand: "Brew", model: "Metric", path: "/shop/brew/metric" },
-  { brand: "Farer", model: "Lander", path: "/shop/farer/lander" },
-  { brand: "Halios", model: "Universa", path: "/shop/halios/universa" },
-  { brand: "Lorier", model: "Neptune", path: "/shop/lorier/neptune" },
-  { brand: "Monta", model: "Atlas", path: "/shop/monta/atlas" },
-  { brand: "Autodromo", model: "Group B", path: "/shop/autodromo/group-b" },
-  { brand: "Kurono", model: "Chronograph 2", path: "/shop/kurono/chronograph-2" },
-  { brand: "Anordain", model: "Model 1", path: "/shop/anordain/model-1" },
-  { brand: "Beaucroft", model: "Navigator", path: "/shop/beaucroft/navigator" },
-];
-
 const MainNav = () => {
   const navigate = useNavigate();
 
   const handleRandomWatch = () => {
-    const randomWatch = WATCHES[Math.floor(Math.random() * WATCHES.length)];
-    navigate(randomWatch.path);
+    // Instead of trying to navigate to a specific watch (which doesn't exist yet),
+    // navigate to a random brand page
+    const randomBrand = BRANDS[Math.floor(Math.random() * BRANDS.length)];
+    navigate(`/shop/${randomBrand}`);
+    
+    // Show a toast to inform the user what happened
+    toast.info(`Exploring ${randomBrand.charAt(0).toUpperCase() + randomBrand.slice(1)} watches`, {
+      description: "We'll have individual watch pages soon!"
+    });
   };
 
   return (

@@ -12,7 +12,8 @@ const CartPage = () => {
     {
       name: "Baltic Aquascaphe",
       image: "https://images.unsplash.com/photo-1549482199-bc1ca6f58502?q=80&w=500",
-      rrp: 649
+      rrp: 649,
+      brand: "Baltic"
     }
   ];
 
@@ -20,17 +21,20 @@ const CartPage = () => {
     {
       name: "Lorier Neptune",
       image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=500",
-      rrp: 499
+      rrp: 499,
+      brand: "Lorier"
     },
     {
       name: "Brew Metric",
       image: "https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500",
-      rrp: 395
+      rrp: 395,
+      brand: "Brew"
     },
     {
       name: "Farer Bernina",
       image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500",
-      rrp: 875
+      rrp: 875,
+      brand: "Farer"
     }
   ];
 
@@ -95,6 +99,7 @@ const CartPage = () => {
                 name={item.name}
                 image={item.image}
                 rrp={item.rrp}
+                brand={item.brand}
               />
             ))}
           </div>

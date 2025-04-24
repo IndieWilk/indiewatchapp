@@ -88,10 +88,10 @@ const MainNav = () => {
           <Button 
             variant="outline" 
             className="hover:bg-primary/10 gap-2"
-            onClick={() => navigate('/wheel')}
+            onClick={() => navigate('/monthly-prize')}
           >
             <Gift className="h-5 w-5 text-primary" />
-            Monthly Draw
+            Monthly Prize
           </Button>
         </div>
         

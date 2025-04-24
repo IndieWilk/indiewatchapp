@@ -16,6 +16,7 @@ import SecurityPage from "./pages/SecurityPage";
 import WheelPage from "./pages/WheelPage";
 import BottomNav from "./components/BottomNav";
 import ProductPage from "./pages/ProductPage";
+import MonthlyPrizePage from "./pages/MonthlyPrizePage";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/community" element={<Community />} />
             <Route path="/content" element={<Content />} />
             <Route path="/wheel" element={<WheelPage />} />
+            <Route path="/monthly-prize" element={<MonthlyPrizePage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/feedback" element={<FeedbackPage />} />

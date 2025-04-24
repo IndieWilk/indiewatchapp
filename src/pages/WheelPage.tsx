@@ -4,15 +4,17 @@ import MainNav from '@/components/MainNav';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Gift, Star, PartyPopper, Award, Timer } from 'lucide-react';
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const WheelPage = () => {
   const [isSpinning, setIsSpinning] = useState(false);
+  const [showPrize, setShowPrize] = useState(false);
   
   const handleSpin = () => {
     setIsSpinning(true);
-    // Stop spinning after 3 seconds
     setTimeout(() => {
       setIsSpinning(false);
+      setShowPrize(true);
     }, 3000);
   };
 
@@ -86,9 +88,24 @@ const WheelPage = () => {
             </div>
           </CardContent>
         </Card>
+
+        <Dialog open={showPrize} onOpenChange={setShowPrize}>
+          <DialogContent className="sm:max-w-md">
+            <DialogTitle className="text-center mb-4">This Month's Prize is...</DialogTitle>
+            <div className="flex flex-col items-center gap-4">
+              <img 
+                src="https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500" 
+                alt="Baltic Aquascaphe"
+                className="rounded-lg w-full max-w-[300px] shadow-lg"
+              />
+              <h3 className="text-xl font-semibold">Baltic Aquascaphe</h3>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
 };
 
 export default WheelPage;
+

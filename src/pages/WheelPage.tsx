@@ -61,7 +61,7 @@ const WheelPage = () => {
             
             <div className="relative">
               <p className="mt-4 text-base text-muted-foreground max-w-md">
-                Three lucky watch geeks can win a watch from one of our partners each month.
+                Spin once a month to win entries to our monthly prize draw
               </p>
               <Button 
                 onClick={handleSpin} 

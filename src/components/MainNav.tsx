@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -6,7 +7,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart } from "lucide-react";
+import { User, ShoppingCart, Watch } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -22,6 +23,15 @@ const MainNav = () => {
         <Link to="/" className="flex items-center gap-2">
           <Logo className="h-10 w-10 rounded-md overflow-hidden shadow-md transition-transform hover:scale-105" />
         </Link>
+        
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="ml-4 hover:bg-primary/10"
+          title="Random Watch"
+        >
+          <Watch className="h-5 w-5 text-primary" />
+        </Button>
         
         <NavigationMenu className="hidden md:flex mx-6">
           <NavigationMenuList>
@@ -71,3 +81,4 @@ const MainNav = () => {
 };
 
 export default MainNav;
+

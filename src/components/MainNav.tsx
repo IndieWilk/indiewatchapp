@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, Watch, Gift } from "lucide-react";
+import { User, ShoppingCart, Watch, Gift, Search } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -14,7 +14,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { toast } from "sonner";
 
 const BRANDS = [
   "baltic", "brew", "farer", "halios", "lorier", "monta", 
@@ -102,13 +101,11 @@ const MainNav = () => {
           </NavigationMenuList>
         </NavigationMenu>
         
-        <div className="flex-1 flex justify-center">
-          <div className="w-[200px]">
-            <SearchCommand />
-          </div>
-        </div>
+        <div className="flex-1"></div>
         
         <div className="flex items-center space-x-4">
+          <SearchCommand />
+          
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Profile">

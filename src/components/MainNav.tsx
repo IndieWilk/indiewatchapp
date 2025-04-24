@@ -66,10 +66,6 @@ const MainNav = () => {
     const randomProduct = brandProducts[Math.floor(Math.random() * brandProducts.length)];
     
     navigate(`/shop/${randomBrand}/${randomProduct.slug}`);
-    
-    toast.info(`Exploring ${randomProduct.name}`, {
-      description: `From ${randomBrand.charAt(0).toUpperCase() + randomBrand.slice(1)}`
-    });
   };
 
   return (

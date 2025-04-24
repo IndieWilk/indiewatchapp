@@ -231,6 +231,7 @@ const BrandPage = () => {
               name={product.name}
               image={product.image}
               rrp={product.rrp}
+              brand={brandName || ''}
             />
           ))}
         </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
@@ -138,7 +137,7 @@ const Index = () => {
           </h1>
           
           <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-            The all-in-one app for the watch community. Discover and support the worlds best independent watch brands.
+            Discover, Support and Shop for the worlds best independent watch brands
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -213,4 +212,3 @@ const Index = () => {
 };
 
 export default Index;
-

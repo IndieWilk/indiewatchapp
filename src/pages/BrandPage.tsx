@@ -88,6 +88,12 @@ const BRANDS: Brand[] = [
     country: "Switzerland",
     image: "https://images.unsplash.com/photo-1548096805-f63cf22ed46d?w=500&h=500&fit=crop",
     description: "Norqain represents a new generation of independent Swiss watchmaking. Founded by industry veterans, they create robust sport and adventure watches with distinctive design elements and high-end finishing."
+  },
+  { 
+    name: "Rosenbusch", 
+    country: "Switzerland",
+    image: "https://images.unsplash.com/photo-1614703418052-d5b893d495bc?w=500&h=500&fit=crop",
+    description: "Founded in 2023, Rosenbusch represents the next generation of Swiss independent watchmaking. Their timepieces combine traditional craftsmanship with contemporary design, featuring in-house developed complications and meticulous hand-finishing. Each watch embodies the essence of modern Swiss luxury while maintaining accessibility."
   }
 ];
 
@@ -163,6 +169,11 @@ const BRAND_PRODUCTS = {
     { name: "Freedom 60", image: "https://images.unsplash.com/photo-1548096805-f63cf22ed46d?w=500&h=500&fit=crop", rrp: 2990 },
     { name: "Adventure Sport", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 2490 },
     { name: "Independence 22", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 3990 }
+  ],
+  rosenbusch: [
+    { name: "Alpine Chronograph", image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop", rrp: 2950 },
+    { name: "Glacier Automatic", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 1890 },
+    { name: "Mountain GMT", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 2450 }
   ]
 };
 

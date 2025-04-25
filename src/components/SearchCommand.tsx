@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Search } from 'lucide-react';
@@ -24,7 +23,8 @@ const BRANDS = [
   { name: "Anordain", country: "UK" },
   { name: "Beaucroft", country: "Switzerland" },
   { name: "Nivada Grenchen", country: "Switzerland" },
-  { name: "Norqain", country: "Switzerland" }
+  { name: "Norqain", country: "Switzerland" },
+  { name: "Rosenbusch", country: "Switzerland" }
 ];
 
 export function SearchCommand() {

@@ -51,7 +51,12 @@ const BRAND_PRODUCTS = {
     { name: "Universa", slug: "universa" },
     { name: "Fairwind", slug: "fairwind" },
     { name: "Seaforth", slug: "seaforth" }
-  ]
+  ],
+  rosenbusch: [
+    { name: "Alpine Chronograph", slug: "alpine-chronograph" },
+    { name: "Glacier Automatic", slug: "glacier-automatic" },
+    { name: "Mountain GMT", slug: "mountain-gmt" }
+  ],
 };
 
 const MainNav = () => {

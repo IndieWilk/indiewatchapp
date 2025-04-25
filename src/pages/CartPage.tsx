@@ -68,6 +68,10 @@ const CartPage = () => {
                       <div className="flex-1">
                         <h3 className="font-semibold">{item.name}</h3>
                         <p className="text-muted-foreground">£{item.rrp}</p>
+                        <div className="flex items-center mt-2 text-sm text-muted-foreground">
+                          <Gift className="h-4 w-4 mr-2" />
+                          <span>Earns {calculatePrizeEntries(item.rrp)} prize draw entries</span>
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -87,13 +91,6 @@ const CartPage = () => {
                 <div className="flex justify-between">
                   <span>Subtotal</span>
                   <span>£{cartTotal}</span>
-                </div>
-                <div className="flex justify-between items-center pt-2 border-t">
-                  <div className="flex items-center">
-                    <Gift className="h-4 w-4 mr-2" />
-                    <span>Prize Draw Entries</span>
-                  </div>
-                  <span className="font-semibold">{prizeEntries}</span>
                 </div>
               </div>
               <Button className="w-full" size="lg">

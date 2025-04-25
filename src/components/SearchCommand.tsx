@@ -24,7 +24,7 @@ const BRANDS = [
   { name: "Beaucroft", country: "Switzerland" },
   { name: "Nivada Grenchen", country: "Switzerland" },
   { name: "Norqain", country: "Switzerland" },
-  { name: "Rosenbusch", country: "Switzerland" }
+  { name: "Rosenbusch", country: "Germany" }
 ];
 
 export function SearchCommand() {

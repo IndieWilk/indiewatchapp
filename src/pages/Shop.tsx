@@ -86,7 +86,7 @@ const BRANDS: Brand[] = [
   },
   { 
     name: "Rosenbusch", 
-    country: "Switzerland",
+    country: "Germany",
     image: "https://images.unsplash.com/photo-1614703418052-d5b893d495bc?w=500&h=500&fit=crop"
   }
 ];

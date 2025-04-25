@@ -53,9 +53,8 @@ const BRAND_PRODUCTS = {
     { name: "Seaforth", slug: "seaforth" }
   ],
   rosenbusch: [
-    { name: "Alpine Chronograph", slug: "alpine-chronograph" },
-    { name: "Glacier Automatic", slug: "glacier-automatic" },
-    { name: "Mountain GMT", slug: "mountain-gmt" }
+    { name: "The Quest RB200", slug: "the-quest-rb200" },
+    { name: "The Horizon", slug: "the-horizon" }
   ],
 };
 

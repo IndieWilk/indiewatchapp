@@ -91,9 +91,9 @@ const BRANDS: Brand[] = [
   },
   { 
     name: "Rosenbusch", 
-    country: "Switzerland",
+    country: "Germany",
     image: "https://images.unsplash.com/photo-1614703418052-d5b893d495bc?w=500&h=500&fit=crop",
-    description: "Founded in 2023, Rosenbusch represents the next generation of Swiss independent watchmaking. Their timepieces combine traditional craftsmanship with contemporary design, featuring in-house developed complications and meticulous hand-finishing. Each watch embodies the essence of modern Swiss luxury while maintaining accessibility."
+    description: "Founded in 2023, Rosenbusch represents the next generation of German independent watchmaking. Their timepieces combine traditional craftsmanship with contemporary design, featuring in-house developed complications and meticulous hand-finishing. Each watch embodies the essence of modern German engineering and precision."
   }
 ];
 
@@ -171,9 +171,8 @@ const BRAND_PRODUCTS = {
     { name: "Independence 22", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 3990 }
   ],
   rosenbusch: [
-    { name: "Alpine Chronograph", image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop", rrp: 2950 },
-    { name: "Glacier Automatic", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 1890 },
-    { name: "Mountain GMT", image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop", rrp: 2450 }
+    { name: "The Quest RB200", image: "https://images.unsplash.com/photo-1614703418052-d5b893d495bc?w=500&h=500&fit=crop", rrp: 2950 },
+    { name: "The Horizon", image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop", rrp: 3250 }
   ]
 };
 

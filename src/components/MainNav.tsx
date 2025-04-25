@@ -14,6 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/badge";
 
 const BRANDS = [
   "baltic", "brew", "farer", "halios", "lorier", "monta", 
@@ -71,6 +72,20 @@ const MainNav = () => {
     navigate(`/shop/${randomBrand}/${randomProduct.slug}`);
   };
 
+  // Temporary data - in a real app this would come from a global state/context
+  const cartItems = [
+    {
+      name: "Baltic Aquascaphe",
+      rrp: 649,
+    }
+  ];
+
+  const calculatePrizeEntries = (total: number): number => {
+    return Math.floor(total / 100) * 5;
+  };
+
+  const totalEntries = cartItems.reduce((acc, item) => acc + calculatePrizeEntries(item.rrp), 0);
+
   return (
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -91,11 +106,18 @@ const MainNav = () => {
 
           <Button 
             variant="outline" 
-            className="hover:bg-primary/10 gap-2"
+            className="hover:bg-primary/10 gap-2 relative"
             onClick={() => navigate('/monthly-prize')}
           >
             <Gift className="h-5 w-5 text-primary" />
             Monthly Prize
+            <Badge 
+              variant="secondary" 
+              className="absolute -top-2 -right-2 bg-blue-500 text-white hover:bg-blue-600"
+              title="Your prize draw entries"
+            >
+              {totalEntries}
+            </Badge>
           </Button>
         </div>
         

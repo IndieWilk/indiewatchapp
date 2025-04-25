@@ -122,6 +122,8 @@ const Index = () => {
     }
   ];
 
+  const randomizedBrands = [...brands].sort(() => Math.random() - 0.5);
+
   return (
     <div className="flex flex-col min-h-screen">
       <MainNav />
@@ -163,7 +165,7 @@ const Index = () => {
                 <h2 className="text-2xl font-bold">Discover Brands</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {brands.map((brand) => (
+                {randomizedBrands.map((brand) => (
                   <BrandCard key={brand.name} name={brand.name} imageSrc={brand.imageSrc} />
                 ))}
               </div>

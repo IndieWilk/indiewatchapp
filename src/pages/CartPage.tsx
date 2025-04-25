@@ -1,10 +1,9 @@
-
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import ProductCard from '@/components/ProductCard';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Gift } from 'lucide-react';
 
 const CartPage = () => {
   // Placeholder data - in a real app this would come from a cart context/store
@@ -37,6 +36,14 @@ const CartPage = () => {
       brand: "Farer"
     }
   ];
+
+  const calculatePrizeEntries = (total: number): number => {
+    // Calculate entries (5 entries per £100 spent)
+    return Math.floor(total / 100) * 5;
+  };
+
+  const cartTotal = cartItems.reduce((acc, item) => acc + item.rrp, 0);
+  const prizeEntries = calculatePrizeEntries(cartTotal);
 
   return (
     <div className="min-h-screen bg-background">
@@ -79,7 +86,14 @@ const CartPage = () => {
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>£{cartItems.reduce((acc, item) => acc + item.rrp, 0)}</span>
+                  <span>£{cartTotal}</span>
+                </div>
+                <div className="flex justify-between items-center pt-2 border-t">
+                  <div className="flex items-center">
+                    <Gift className="h-4 w-4 mr-2" />
+                    <span>Prize Draw Entries</span>
+                  </div>
+                  <span className="font-semibold">{prizeEntries}</span>
                 </div>
               </div>
               <Button className="w-full" size="lg">

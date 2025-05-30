@@ -1,12 +1,18 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
 import {
   NavigationMenu,
   NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, Watch, Gift, Search } from "lucide-react";
+import { User, ShoppingCart, Watch, Gift, Search, Home, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -15,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 const BRANDS = [
   "baltic", "brew", "farer", "halios", "lorier", "monta", 
@@ -89,11 +96,47 @@ const MainNav = () => {
   return (
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2 mr-6">
           <Logo className="h-10 w-10 rounded-md overflow-hidden shadow-md transition-transform hover:scale-105" />
+          <span className="hidden sm:inline-block font-bold text-xl text-primary">IndieWatch</span>
         </Link>
         
-        <div className="flex items-center gap-2 ml-4">
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link to="/" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                <Home className="h-4 w-4" />
+                Discover
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/shop" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                <ShoppingBag className="h-4 w-4" />
+                Shop
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/community" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                <Users className="h-4 w-4" />
+                Community
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/content" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                <Newspaper className="h-4 w-4" />
+                News
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/wheel" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                <Cog className="h-4 w-4" />
+                The Wheel
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        
+        <div className="flex items-center gap-2 ml-auto md:ml-6">
           <Button 
             variant="outline" 
             className="hover:bg-primary/10 gap-2"
@@ -101,7 +144,7 @@ const MainNav = () => {
             onClick={handleRandomWatch}
           >
             <Watch className="h-5 w-5 text-primary" />
-            Random Watch
+            <span className="hidden lg:inline">Random Watch</span>
           </Button>
 
           <Button 
@@ -110,7 +153,7 @@ const MainNav = () => {
             onClick={() => navigate('/monthly-prize')}
           >
             <Gift className="h-5 w-5 text-primary" />
-            Monthly Prize
+            <span className="hidden lg:inline">Monthly Prize</span>
             <Badge 
               variant="secondary" 
               className="absolute -top-2 -right-2 bg-blue-500 text-white hover:bg-blue-600"
@@ -121,15 +164,7 @@ const MainNav = () => {
           </Button>
         </div>
         
-        <NavigationMenu className="hidden md:flex mx-6">
-          <NavigationMenuList>
-            
-          </NavigationMenuList>
-        </NavigationMenu>
-        
-        <div className="flex-1"></div>
-        
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ml-4">
           <SearchCommand />
           
           <DropdownMenu>

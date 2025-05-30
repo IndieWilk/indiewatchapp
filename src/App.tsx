@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,7 +15,6 @@ import ProfilePage from "./pages/ProfilePage";
 import FeedbackPage from "./pages/FeedbackPage";
 import SecurityPage from "./pages/SecurityPage";
 import WheelPage from "./pages/WheelPage";
-import BottomNav from "./components/BottomNav";
 import ProductPage from "./pages/ProductPage";
 import MonthlyPrizePage from "./pages/MonthlyPrizePage";
 
@@ -26,24 +26,21 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="pb-16">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/shop/:brandName" element={<BrandPage />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/content" element={<Content />} />
-            <Route path="/wheel" element={<WheelPage />} />
-            <Route path="/monthly-prize" element={<MonthlyPrizePage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/feedback" element={<FeedbackPage />} />
-            <Route path="/security" element={<SecurityPage />} />
-            <Route path="/shop/:brandName/:productSlug" element={<ProductPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <BottomNav />
-        </div>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:brandName" element={<BrandPage />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/content" element={<Content />} />
+          <Route path="/wheel" element={<WheelPage />} />
+          <Route path="/monthly-prize" element={<MonthlyPrizePage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
+          <Route path="/security" element={<SecurityPage />} />
+          <Route path="/shop/:brandName/:productSlug" element={<ProductPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

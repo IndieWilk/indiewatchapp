@@ -12,7 +12,6 @@ const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
         alt="IndieWatch Logo" 
         className="h-10 w-10 object-contain"
       />
-      <div className="logo-shimmer" />
     </div>
   );
 };

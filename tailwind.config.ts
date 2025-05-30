@@ -26,18 +26,18 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))", // Deep blue from logo
+          DEFAULT: "hsl(var(--primary))", // Deep navy blue from logo
           foreground: "hsl(var(--primary-foreground))",
-          50: "hsl(207, 67%, 95%)",   // Lightest blue
-          100: "hsl(207, 67%, 85%)",
-          200: "hsl(207, 67%, 75%)",
-          300: "hsl(207, 67%, 65%)",
-          400: "hsl(207, 67%, 55%)",
-          500: "hsl(207, 67%, 45%)",  // Logo blue
-          600: "hsl(207, 67%, 35%)",  // Main primary
-          700: "hsl(207, 67%, 25%)",
-          800: "hsl(207, 67%, 15%)",
-          900: "hsl(207, 67%, 10%)",
+          50: "hsl(210, 100%, 95%)",   // Lightest navy
+          100: "hsl(210, 100%, 85%)",
+          200: "hsl(210, 100%, 75%)",
+          300: "hsl(210, 100%, 65%)",
+          400: "hsl(210, 100%, 55%)",
+          500: "hsl(210, 100%, 45%)",
+          600: "hsl(210, 100%, 35%)",
+          700: "hsl(210, 100%, 25%)",  // Logo navy
+          800: "hsl(210, 100%, 15%)",  // Main primary
+          900: "hsl(210, 100%, 10%)",  // Darkest navy
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -78,19 +78,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "shimmer": {
-          from: { backgroundPosition: "200% 0" },
-          to: { backgroundPosition: "0 0" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "shimmer": "shimmer 8s ease-in-out infinite",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "shimmer": "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%)",
       },
     },
   },

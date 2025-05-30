@@ -28,16 +28,16 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))", // Deep navy blue from logo
           foreground: "hsl(var(--primary-foreground))",
-          50: "hsl(210, 100%, 95%)",   // Lightest navy
-          100: "hsl(210, 100%, 85%)",
-          200: "hsl(210, 100%, 75%)",
-          300: "hsl(210, 100%, 65%)",
-          400: "hsl(210, 100%, 55%)",
-          500: "hsl(210, 100%, 45%)",
-          600: "hsl(210, 100%, 35%)",
-          700: "hsl(210, 100%, 25%)",  // Logo navy
-          800: "hsl(210, 100%, 15%)",  // Main primary
-          900: "hsl(210, 100%, 10%)",  // Darkest navy
+          50: "hsl(218, 85%, 95%)",   // Lightest navy
+          100: "hsl(218, 85%, 85%)",
+          200: "hsl(218, 85%, 75%)",
+          300: "hsl(218, 85%, 65%)",
+          400: "hsl(218, 85%, 55%)",
+          500: "hsl(218, 85%, 45%)",
+          600: "hsl(218, 85%, 35%)",
+          700: "hsl(218, 85%, 25%)",  // Logo navy
+          800: "hsl(218, 85%, 18%)",  // Main primary from logo
+          900: "hsl(218, 85%, 12%)",  // Darkest navy
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

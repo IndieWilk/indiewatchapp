@@ -5,32 +5,32 @@
 
 @layer base {
   :root {
-    --background: 210 20% 75%; /* Warmer blue-grey background matching logo */
-    --foreground: 218 40% 12%; /* Dark navy text from logo */
-    --primary: 218 85% 18%; /* Deep navy blue from logo */
+    --background: 210 25% 78%; /* Soft blue-grey background from new logo */
+    --foreground: 210 50% 20%; /* Dark blue-grey text from logo */
+    --primary: 210 60% 25%; /* Deep blue from logo text */
     --primary-foreground: 0 0% 98%; /* White text on primary */
     
-    --card: 210 20% 80%; /* Slightly lighter blue-grey for cards */
-    --card-foreground: 218 40% 12%;
+    --card: 210 25% 82%; /* Slightly lighter blue-grey for cards */
+    --card-foreground: 210 50% 20%;
     
-    --popover: 210 20% 80%;
-    --popover-foreground: 218 40% 12%;
+    --popover: 210 25% 82%;
+    --popover-foreground: 210 50% 20%;
     
-    --secondary: 210 15% 85%; /* Light blue-grey */
-    --secondary-foreground: 218 40% 12%;
+    --secondary: 210 20% 85%; /* Light blue-grey */
+    --secondary-foreground: 210 50% 20%;
     
-    --muted: 210 15% 85%;
-    --muted-foreground: 218 20% 25%;
+    --muted: 210 20% 85%;
+    --muted-foreground: 210 30% 35%;
     
-    --accent: 218 75% 22%; /* Slightly lighter than primary */
+    --accent: 210 55% 30%; /* Slightly lighter than primary */
     --accent-foreground: 0 0% 98%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 210 15% 65%; /* Darker border for contrast */
-    --input: 210 10% 88%;
-    --ring: 218 85% 18%;
+    --border: 210 20% 68%; /* Border matching logo tone */
+    --input: 210 15% 88%;
+    --ring: 210 60% 25%;
     --radius: 0.5rem;
   }
 }

@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { User, ShoppingCart, Watch, Gift, Search, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
+import Logo from "./Logo";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,9 +41,7 @@ const MainNav = () => {
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link to="/" className="flex items-center mr-6">
-          <div className="h-14 w-14 bg-primary rounded-lg flex items-center justify-center">
-            <Watch className="h-8 w-8 text-primary-foreground" />
-          </div>
+          <Logo />
         </Link>
         
         <NavigationMenu className="hidden md:flex">

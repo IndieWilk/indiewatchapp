@@ -5,32 +5,32 @@
 
 @layer base {
   :root {
-    --background: 220 45% 15%; /* Dark blue background */
+    --background: 0 0% 5%; /* Very dark black background */
     --foreground: 0 0% 98%; /* White text for contrast */
-    --primary: 200 100% 50%; /* Sky blue primary */
-    --primary-foreground: 220 45% 15%; /* Dark blue text on primary */
+    --primary: 0 0% 15%; /* Dark gray primary */
+    --primary-foreground: 0 0% 98%; /* White text on primary */
     
-    --card: 220 40% 18%; /* Slightly lighter dark blue for cards */
+    --card: 0 0% 8%; /* Slightly lighter black for cards */
     --card-foreground: 0 0% 98%;
     
-    --popover: 220 40% 18%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
     
-    --secondary: 220 35% 22%; /* Medium dark blue */
+    --secondary: 0 0% 12%; /* Dark gray secondary */
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 220 30% 25%;
+    --muted: 0 0% 15%;
     --muted-foreground: 0 0% 85%;
     
-    --accent: 200 80% 60%; /* Light sky blue accent */
-    --accent-foreground: 220 45% 15%;
+    --accent: 0 0% 20%; /* Lighter gray accent */
+    --accent-foreground: 0 0% 98%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 220 25% 30%; /* Border in dark blue tone */
-    --input: 220 40% 20%;
-    --ring: 200 100% 50%;
+    --border: 0 0% 20%; /* Gray border */
+    --input: 0 0% 10%;
+    --ring: 0 0% 30%;
     --radius: 0.5rem;
   }
 }

@@ -1,16 +1,24 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
 import { Button } from '@/components/ui/button';
 import { 
   ChevronRight, 
   ShoppingBag, 
   MessageSquare,
-  RectangleHorizontal
+  RectangleHorizontal,
+  Watch
 } from 'lucide-react';
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const handleRandomWatch = () => {
+    // No brands available, redirect to shop
+    navigate('/shop');
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <MainNav />
@@ -25,17 +33,30 @@ const Index = () => {
             Discover, Support and Shop for the worlds best independent watch brands
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link to="/shop">
-              <Button size="lg">
-                <ShoppingBag className="mr-2 h-5 w-5" /> Cool Watches
-              </Button>
-            </Link>
-            <Link to="/community">
-              <Button size="lg">
-                <MessageSquare className="mr-2 h-5 w-5" /> Join Community
-              </Button>
-            </Link>
+          <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link to="/shop">
+                <Button size="lg" variant="outline">
+                  <ShoppingBag className="mr-2 h-5 w-5" /> Cool Watches
+                </Button>
+              </Link>
+              <Link to="/community">
+                <Button size="lg" variant="outline">
+                  <MessageSquare className="mr-2 h-5 w-5" /> Join Community
+                </Button>
+              </Link>
+            </div>
+            
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="gap-2"
+              title="Random Watch"
+              onClick={handleRandomWatch}
+            >
+              <Watch className="h-5 w-5" />
+              Random Watch
+            </Button>
           </div>
         </div>
       </section>

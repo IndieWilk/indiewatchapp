@@ -5,32 +5,32 @@
 
 @layer base {
   :root {
-    --background: 210 35% 45%; /* Steel blue background matching logo */
+    --background: 204 47% 41%; /* Matching the steel blue from logo */
     --foreground: 0 0% 98%; /* White text for contrast */
-    --primary: 210 45% 25%; /* Darker steel blue from logo */
+    --primary: 204 55% 30%; /* Darker steel blue from logo */
     --primary-foreground: 0 0% 98%; /* White text on primary */
     
-    --card: 210 35% 50%; /* Slightly lighter steel blue for cards */
+    --card: 204 45% 45%; /* Slightly lighter steel blue for cards */
     --card-foreground: 0 0% 98%;
     
-    --popover: 210 35% 50%;
+    --popover: 204 45% 45%;
     --popover-foreground: 0 0% 98%;
     
-    --secondary: 210 25% 55%; /* Medium steel blue */
+    --secondary: 204 35% 50%; /* Medium steel blue */
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 210 20% 60%;
+    --muted: 204 25% 55%;
     --muted-foreground: 0 0% 85%;
     
-    --accent: 210 40% 35%; /* Accent steel blue */
+    --accent: 204 50% 35%; /* Accent steel blue */
     --accent-foreground: 0 0% 98%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 210 25% 65%; /* Border matching steel blue tone */
-    --input: 210 30% 40%;
-    --ring: 210 45% 25%;
+    --border: 204 30% 60%; /* Border matching steel blue tone */
+    --input: 204 40% 35%;
+    --ring: 204 55% 30%;
     --radius: 0.5rem;
   }
 }

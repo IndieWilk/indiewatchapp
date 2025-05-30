@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -76,20 +77,20 @@ const MainNav = () => {
         <div className="flex items-center gap-2 ml-auto md:ml-6">
           <Button 
             variant="outline" 
-            className="hover:bg-primary/10 gap-2"
+            className="gap-2"
             title="Random Watch"
             onClick={handleRandomWatch}
           >
-            <Watch className="h-5 w-5 text-primary" />
+            <Watch className="h-5 w-5" />
             <span className="hidden lg:inline">Random Watch</span>
           </Button>
 
           <Button 
             variant="outline" 
-            className="hover:bg-primary/10 gap-2 relative"
+            className="gap-2 relative"
             onClick={() => navigate('/monthly-prize')}
           >
-            <Gift className="h-5 w-5 text-primary" />
+            <Gift className="h-5 w-5" />
             <span className="hidden lg:inline">Monthly Prize</span>
             <Badge 
               variant="secondary" 

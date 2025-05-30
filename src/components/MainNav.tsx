@@ -44,7 +44,7 @@ const MainNav = () => {
           <img 
             src="/lovable-uploads/48838c98-304e-4746-b9e3-3e245ebbfebe.png" 
             alt="IndieWatch Logo" 
-            className="h-8 w-8 object-contain"
+            className="h-14 w-14 object-contain"
             style={{
               background: 'transparent',
               filter: 'drop-shadow(0 0 0 transparent)',

@@ -2,23 +2,16 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-interface LogoProps extends React.HTMLAttributes<SVGSVGElement> {}
+interface LogoProps extends React.HTMLAttributes<HTMLImageElement> {}
 
 const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 100 100" 
+    <img 
+      src="/lovable-uploads/d73b9283-ded8-4f21-832e-9dcbeb592e88.png" 
+      alt="IndieWatch Logo"
       className={cn("text-primary", className)}
-      fill="currentColor"
       {...props}
-    >
-      <image 
-        href="/lovable-uploads/800831ee-abef-41da-933f-3960aa8a99e1.png" 
-        width="100" 
-        height="100" 
-      />
-    </svg>
+    />
   );
 };
 

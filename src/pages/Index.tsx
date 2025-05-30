@@ -17,7 +17,7 @@ const Index = () => {
       
       <section className="py-16 px-4 md:py-24 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             IndieWatch
           </h1>
           

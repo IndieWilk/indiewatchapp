@@ -32,7 +32,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/community">
-              <Button size="lg" variant="outline">
+              <Button size="lg">
                 <MessageSquare className="mr-2 h-5 w-5" /> Join Community
               </Button>
             </Link>

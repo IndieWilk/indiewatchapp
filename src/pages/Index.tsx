@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
@@ -35,12 +36,12 @@ const Index = () => {
           <div className="flex flex-col items-center space-y-4">
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link to="/shop">
-                <Button size="lg" className="bg-gray-700 hover:bg-gray-600 text-white">
+                <Button size="lg" className="bg-gray-700 hover:bg-gray-600 text-foreground">
                   <ShoppingBag className="mr-2 h-5 w-5" /> Cool Watches
                 </Button>
               </Link>
               <Link to="/community">
-                <Button size="lg" className="bg-gray-700 hover:bg-gray-600 text-white">
+                <Button size="lg" className="bg-gray-700 hover:bg-gray-600 text-foreground">
                   <MessageSquare className="mr-2 h-5 w-5" /> Join Community
                 </Button>
               </Link>
@@ -48,7 +49,7 @@ const Index = () => {
             
             <Button 
               size="lg" 
-              className="bg-gray-700 hover:bg-gray-600 text-white gap-2"
+              className="bg-gray-700 hover:bg-gray-600 text-foreground gap-2"
               title="Random Watch"
               onClick={handleRandomWatch}
             >

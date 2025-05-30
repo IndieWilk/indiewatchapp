@@ -9,7 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, Watch, Gift, Search, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
+import { User, ShoppingCart, Gift, Search, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import Logo from "./Logo";
 import {
@@ -23,11 +23,6 @@ import { cn } from "@/lib/utils";
 
 const MainNav = () => {
   const navigate = useNavigate();
-
-  const handleRandomWatch = () => {
-    // No brands available, redirect to shop
-    navigate('/shop');
-  };
 
   // Empty cart for clean slate
   const cartItems: any[] = [];
@@ -75,16 +70,6 @@ const MainNav = () => {
         </NavigationMenu>
         
         <div className="flex items-center gap-2 ml-auto md:ml-6">
-          <Button 
-            variant="outline" 
-            className="gap-2"
-            title="Random Watch"
-            onClick={handleRandomWatch}
-          >
-            <Watch className="h-5 w-5" />
-            <span className="hidden lg:inline">Random Watch</span>
-          </Button>
-
           <Button 
             variant="outline" 
             className="gap-2 relative"

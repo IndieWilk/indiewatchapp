@@ -8,7 +8,7 @@ const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
   return (
     <div className={cn("logo-container", className)} {...props}>
       <img 
-        src="/lovable-uploads/59c88d89-a2ae-40d0-9d1b-217d9abc6e61.png" 
+        src="/lovable-uploads/48838c98-304e-4746-b9e3-3e245ebbfebe.png" 
         alt="IndieWatch Logo" 
         className="h-10 w-10 object-contain"
         style={{

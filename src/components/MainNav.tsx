@@ -42,7 +42,7 @@ const MainNav = () => {
       <div className="container flex h-16 items-center">
         <Link to="/" className="flex items-center mr-6">
           <img 
-            src="/lovable-uploads/59c88d89-a2ae-40d0-9d1b-217d9abc6e61.png" 
+            src="/lovable-uploads/48838c98-304e-4746-b9e3-3e245ebbfebe.png" 
             alt="IndieWatch Logo" 
             className="h-8 w-8 object-contain"
             style={{

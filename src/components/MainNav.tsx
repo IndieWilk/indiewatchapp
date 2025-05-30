@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -9,7 +8,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, Watch, Gift, Search, Home, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
+import { User, ShoppingCart, Watch, Gift, Search, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import {
   DropdownMenu,
@@ -52,8 +51,7 @@ const MainNav = () => {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
-                <Home className="h-4 w-4" />
+              <Link to="/" className={navigationMenuTriggerStyle()}>
                 Discover
               </Link>
             </NavigationMenuItem>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
@@ -97,8 +96,7 @@ const MainNav = () => {
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link to="/" className="flex items-center gap-2 mr-6">
-          <Logo className="h-10 w-10 rounded-md overflow-hidden shadow-md transition-transform hover:scale-105" />
-          <span className="hidden sm:inline-block font-bold text-xl text-primary">IndieWatch</span>
+          <span className="font-bold text-xl text-primary">IndieWatch</span>
         </Link>
         
         <NavigationMenu className="hidden md:flex">

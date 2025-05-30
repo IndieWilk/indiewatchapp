@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import MainNav from '@/components/MainNav';
 import { Button } from '@/components/ui/button';
-import Logo from '@/components/Logo';
 import { 
   ChevronRight, 
   ShoppingBag, 
@@ -130,10 +129,6 @@ const Index = () => {
       
       <section className="py-16 px-4 md:py-24 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
-          <div className="flex justify-center items-center mb-6 relative">
-            <Logo className="mx-auto w-16 h-16 md:w-24 md:h-24" />
-          </div>
-          
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
             IndieWatch
           </h1>

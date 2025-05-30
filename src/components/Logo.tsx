@@ -12,8 +12,8 @@ const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
         alt="IndieWatch Logo" 
         className="h-10 w-10 object-contain"
         style={{
-          filter: 'drop-shadow(0 0 0 transparent)',
           background: 'transparent',
+          filter: 'drop-shadow(0 0 0 transparent)',
           mixBlendMode: 'multiply'
         }}
       />

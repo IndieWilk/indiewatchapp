@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -44,6 +45,11 @@ const MainNav = () => {
             src="/lovable-uploads/59c88d89-a2ae-40d0-9d1b-217d9abc6e61.png" 
             alt="IndieWatch Logo" 
             className="h-8 w-8 object-contain"
+            style={{
+              background: 'transparent',
+              filter: 'drop-shadow(0 0 0 transparent)',
+              mixBlendMode: 'multiply'
+            }}
           />
         </Link>
         

@@ -50,3 +50,11 @@
   display: flex;
   align-items: center;
 }
+
+/* Additional styles to ensure transparent logo backgrounds */
+.logo-container img,
+img[alt*="Logo"],
+img[alt*="logo"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}

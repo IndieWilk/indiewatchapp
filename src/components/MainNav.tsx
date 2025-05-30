@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -41,16 +40,9 @@ const MainNav = () => {
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link to="/" className="flex items-center mr-6">
-          <img 
-            src="/lovable-uploads/48838c98-304e-4746-b9e3-3e245ebbfebe.png" 
-            alt="IndieWatch Logo" 
-            className="h-14 w-14 object-contain"
-            style={{
-              background: 'transparent',
-              filter: 'drop-shadow(0 0 0 transparent)',
-              mixBlendMode: 'multiply'
-            }}
-          />
+          <div className="h-14 w-14 bg-primary rounded-lg flex items-center justify-center">
+            <Watch className="h-8 w-8 text-primary-foreground" />
+          </div>
         </Link>
         
         <NavigationMenu className="hidden md:flex">

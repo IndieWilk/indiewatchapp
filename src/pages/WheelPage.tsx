@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -93,12 +92,10 @@ const WheelPage = () => {
           <DialogContent className="sm:max-w-md">
             <DialogTitle className="text-center mb-4">This Month's Prize is...</DialogTitle>
             <div className="flex flex-col items-center gap-4">
-              <img 
-                src="https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500" 
-                alt="Baltic Aquascaphe"
-                className="rounded-lg w-full max-w-[300px] shadow-lg"
-              />
-              <h3 className="text-xl font-semibold">Baltic Aquascaphe</h3>
+              <div className="w-[300px] h-[300px] bg-primary/20 rounded-lg flex items-center justify-center">
+                <Gift className="h-24 w-24 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold">Mystery Watch Prize</h3>
             </div>
           </DialogContent>
         </Dialog>
@@ -108,4 +105,3 @@ const WheelPage = () => {
 };
 
 export default WheelPage;
-

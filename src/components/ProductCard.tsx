@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
+import { Watch } from 'lucide-react';
 
 interface ProductCardProps {
   name: string;
@@ -26,11 +27,9 @@ const ProductCard = ({ name, image, rrp, brand }: ProductCardProps) => {
     <Link to={`/shop/${brand.toLowerCase()}/${productSlug}`}>
       <Card className="overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-md">
         <AspectRatio ratio={1 / 1}>
-          <img 
-            src={image} 
-            alt={name}
-            className="object-cover w-full h-full"
-          />
+          <div className="w-full h-full bg-primary/20 flex items-center justify-center">
+            <Watch className="h-16 w-16 text-primary" />
+          </div>
         </AspectRatio>
         <CardContent className="p-4">
           <h2 className="text-2xl font-bold mb-3">{name}</h2>

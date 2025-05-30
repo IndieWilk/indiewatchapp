@@ -2,6 +2,7 @@
 import React from 'react';
 import MainNav from '@/components/MainNav';
 import { Card, CardContent } from '@/components/ui/card';
+import { Gift } from 'lucide-react';
 
 const MonthlyPrizePage = () => {
   return (
@@ -16,11 +17,10 @@ const MonthlyPrizePage = () => {
                 This Month's Prize...
               </h1>
               <div className="flex flex-col items-center gap-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500" 
-                  alt="Monthly Prize Watch"
-                  className="rounded-lg w-full max-w-[300px] shadow-lg"
-                />
+                <div className="w-[300px] h-[300px] bg-primary/20 rounded-lg flex items-center justify-center">
+                  <Gift className="h-24 w-24 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A1F2C]">Mystery Watch Prize</h3>
               </div>
             </div>
           </CardContent>

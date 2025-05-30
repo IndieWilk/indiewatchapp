@@ -1,22 +1,16 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Watch } from 'lucide-react';
 
 interface LogoProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
   return (
     <div className={cn("logo-container", className)} {...props}>
-      <img 
-        src="/lovable-uploads/48838c98-304e-4746-b9e3-3e245ebbfebe.png" 
-        alt="IndieWatch Logo" 
-        className="h-12 w-12 object-contain"
-        style={{
-          background: 'transparent',
-          filter: 'drop-shadow(0 0 0 transparent)',
-          mixBlendMode: 'multiply'
-        }}
-      />
+      <div className="h-14 w-14 bg-primary rounded-lg flex items-center justify-center">
+        <Watch className="h-8 w-8 text-primary-foreground" />
+      </div>
     </div>
   );
 };

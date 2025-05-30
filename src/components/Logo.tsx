@@ -14,7 +14,7 @@ const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
       {...props}
     >
       <image 
-        href="/lovable-uploads/14ffdd9a-e013-4b98-ab7d-c746e0831b48.png" 
+        href="/lovable-uploads/800831ee-abef-41da-933f-3960aa8a99e1.png" 
         width="100" 
         height="100" 
       />

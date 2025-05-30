@@ -15,58 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 
-const COMMUNITY_POSTS = [
-  {
-    id: 1,
-    title: "New Lorier Neptune Series IV",
-    author: "WatchEnthusiast",
-    timeAgo: "2 hours ago",
-    content: "Just got my hands on the new Neptune. The bracelet is even better than previous versions. The clasp has been upgraded and the case finishing is superb for a watch at this price point. Anyone else picked one up yet?",
-    comments: 24,
-    upvotes: 156,
-    tags: ["Lorier", "Review", "New Release", "Collection"]
-  },
-  {
-    id: 2,
-    title: "Baltic Aquascaphe Bronze - Patina Progress",
-    author: "BronzeFan",
-    timeAgo: "8 hours ago",
-    content: "My Baltic Bronze is developing a beautiful patina after 3 months of wear. I've been swimming with it in the ocean twice a week. Here's how it looked when new vs now. The color shift is fascinating!",
-    comments: 42,
-    upvotes: 231,
-    tags: ["Baltic", "Bronze", "Patina", "Collection"]
-  },
-  {
-    id: 3,
-    title: "Farer GMT vs Monta Atlas - Which one to choose?",
-    author: "TravelWatchGuy",
-    timeAgo: "1 day ago",
-    content: "I'm torn between the Farer GMT and Monta Atlas for my next travel watch. The Farer has more character with its colorful dial, but the Monta has better specs and finishing. Anyone have experience with both? What would you choose?",
-    comments: 67,
-    upvotes: 98,
-    tags: ["Farer", "Monta", "GMT", "Comparison", "Collection"]
-  },
-  {
-    id: 4,
-    title: "Halios Universa waitlist - finally got the email!",
-    author: "PatientCollector",
-    timeAgo: "2 days ago",
-    content: "After 8 months on the waitlist, I finally got my Halios Universa allocation email today! Going with the pastel blue dial. Anyone else get their email recently? How long did you wait?",
-    comments: 53,
-    upvotes: 187,
-    tags: ["Halios", "Universa", "Waitlist", "Collection"]
-  },
-  {
-    id: 5,
-    title: "Upcoming microbrand releases to watch in 2025",
-    author: "MicroFuturist",
-    timeAgo: "3 days ago",
-    content: "I've been tracking several upcoming releases from indie brands. Here's my list of the most anticipated: 1. Brew's new chrono with mechanical movement, 2. Baltic's new GMT, 3. Atelier Wen's new sports model...",
-    comments: 81,
-    upvotes: 312,
-    tags: ["Upcoming", "New Releases", "2025", "Collection"]
-  }
-];
+const COMMUNITY_POSTS: any[] = [];
 
 const CommunityPost = ({ post }: { post: typeof COMMUNITY_POSTS[0] }) => (
   <Card className="overflow-hidden hover:shadow-md transition-all border-primary border-2">
@@ -223,9 +172,16 @@ const Community = () => {
             </div>
             
             <div className="space-y-4">
-              {posts.map(post => (
-                <CommunityPost key={post.id} post={post} />
-              ))}
+              {posts.length > 0 ? (
+                posts.map(post => (
+                  <CommunityPost key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-16">
+                  <h3 className="text-lg font-medium mb-2">No posts yet</h3>
+                  <p className="text-muted-foreground">Be the first to start a discussion!</p>
+                </div>
+              )}
             </div>
           </div>
           

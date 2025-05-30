@@ -23,73 +23,7 @@ interface Brand {
   image: string;
 }
 
-const BRANDS: Brand[] = [
-  { 
-    name: "Baltic", 
-    country: "France",
-    image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Brew", 
-    country: "USA",
-    image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Farer", 
-    country: "UK",
-    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Halios", 
-    country: "Canada",
-    image: "https://images.unsplash.com/photo-1548171915-f1ce15c6a10a?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Lorier", 
-    country: "USA",
-    image: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Monta", 
-    country: "USA",
-    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Autodromo", 
-    country: "USA",
-    image: "https://images.unsplash.com/photo-1569411032431-07598b0012c2?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Kurono", 
-    country: "Japan",
-    image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Anordain", 
-    country: "UK",
-    image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Beaucroft", 
-    country: "Switzerland",
-    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Nivada Grenchen", 
-    country: "Switzerland",
-    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Norqain", 
-    country: "Switzerland",
-    image: "https://images.unsplash.com/photo-1548096805-f63cf22ed46d?w=500&h=500&fit=crop"
-  },
-  { 
-    name: "Rosenbusch", 
-    country: "Germany",
-    image: "https://images.unsplash.com/photo-1614703418052-d5b893d495bc?w=500&h=500&fit=crop"
-  }
-];
+const BRANDS: Brand[] = [];
 
 const shuffleArray = (array: Brand[]) => {
   const newArray = [...array];
@@ -287,15 +221,8 @@ const Shop = () => {
           </div>
         ) : (
           <div className="text-center py-16">
-            <h3 className="text-lg font-medium mb-2">No brands match your filters</h3>
-            <p className="text-muted-foreground">Try adjusting your search or filter criteria</p>
-            <Button 
-              variant="outline" 
-              className="mt-4" 
-              onClick={clearAllFilters}
-            >
-              Clear Filters
-            </Button>
+            <h3 className="text-lg font-medium mb-2">No brands available</h3>
+            <p className="text-muted-foreground">Brands will appear here once added</p>
           </div>
         )}
       </div>

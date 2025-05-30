@@ -5,21 +5,21 @@
 
 @layer base {
   :root {
-    --background: 210 20% 70%; /* Blue-grey background from image */
+    --background: 210 20% 75%; /* Warmer blue-grey background matching logo */
     --foreground: 218 40% 12%; /* Dark navy text from logo */
     --primary: 218 85% 18%; /* Deep navy blue from logo */
     --primary-foreground: 0 0% 98%; /* White text on primary */
     
-    --card: 210 20% 75%; /* Slightly lighter blue-grey for cards */
+    --card: 210 20% 80%; /* Slightly lighter blue-grey for cards */
     --card-foreground: 218 40% 12%;
     
-    --popover: 210 20% 75%;
+    --popover: 210 20% 80%;
     --popover-foreground: 218 40% 12%;
     
-    --secondary: 210 15% 80%; /* Light blue-grey */
+    --secondary: 210 15% 85%; /* Light blue-grey */
     --secondary-foreground: 218 40% 12%;
     
-    --muted: 210 15% 80%;
+    --muted: 210 15% 85%;
     --muted-foreground: 218 20% 25%;
     
     --accent: 218 75% 22%; /* Slightly lighter than primary */
@@ -28,8 +28,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 210 15% 60%; /* Darker border for contrast */
-    --input: 210 10% 85%;
+    --border: 210 15% 65%; /* Darker border for contrast */
+    --input: 210 10% 88%;
     --ring: 218 85% 18%;
     --radius: 0.5rem;
   }

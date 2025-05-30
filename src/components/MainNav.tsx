@@ -1,12 +1,10 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "@/components/Logo";
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
@@ -22,69 +20,16 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-const BRANDS = [
-  "baltic", "brew", "farer", "halios", "lorier", "monta", 
-  "autodromo", "kurono", "anordain", "beaucroft", 
-  "nivada-grenchen", "norqain"
-];
-
-const BRAND_PRODUCTS = {
-  baltic: [
-    { name: "Aquascaphe Dual-Crown", slug: "aquascaphe-dual-crown" },
-    { name: "Bicompax 002", slug: "bicompax-002" },
-    { name: "HMS 002", slug: "hms-002" }
-  ],
-  brew: [
-    { name: "Retromatic", slug: "retromatic" },
-    { name: "Metric", slug: "metric" },
-    { name: "Retrograph", slug: "retrograph" }
-  ],
-  farer: [
-    { name: "Bernina Hand-Wound", slug: "bernina-hand-wound" },
-    { name: "Lander IV", slug: "lander-iv" },
-    { name: "Carnegie Chronograph", slug: "carnegie-chronograph" }
-  ],
-  lorier: [
-    { name: "Neptune IV", slug: "neptune-iv" },
-    { name: "Falcon IV", slug: "falcon-iv" },
-    { name: "Hyperion", slug: "hyperion" }
-  ],
-  monta: [
-    { name: "Skyquest", slug: "skyquest" },
-    { name: "Oceanking", slug: "oceanking" },
-    { name: "Atlas", slug: "atlas" }
-  ],
-  halios: [
-    { name: "Universa", slug: "universa" },
-    { name: "Fairwind", slug: "fairwind" },
-    { name: "Seaforth", slug: "seaforth" }
-  ],
-  rosenbusch: [
-    { name: "The Quest RB200", slug: "the-quest-rb200" },
-    { name: "The Horizon", slug: "the-horizon" }
-  ],
-};
-
 const MainNav = () => {
   const navigate = useNavigate();
 
   const handleRandomWatch = () => {
-    const availableBrands = Object.keys(BRAND_PRODUCTS);
-    const randomBrand = availableBrands[Math.floor(Math.random() * availableBrands.length)];
-    
-    const brandProducts = BRAND_PRODUCTS[randomBrand as keyof typeof BRAND_PRODUCTS];
-    const randomProduct = brandProducts[Math.floor(Math.random() * brandProducts.length)];
-    
-    navigate(`/shop/${randomBrand}/${randomProduct.slug}`);
+    // No brands available, redirect to shop
+    navigate('/shop');
   };
 
-  // Temporary data - in a real app this would come from a global state/context
-  const cartItems = [
-    {
-      name: "Baltic Aquascaphe",
-      rrp: 649,
-    }
-  ];
+  // Empty cart for clean slate
+  const cartItems: any[] = [];
 
   const calculatePrizeEntries = (total: number): number => {
     return Math.floor(total / 100) * 5;

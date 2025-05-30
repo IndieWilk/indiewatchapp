@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Search } from 'lucide-react';
@@ -6,31 +7,14 @@ import {
   CommandInput,
   CommandList,
   CommandEmpty,
-  CommandGroup,
-  CommandItem,
 } from "@/components/ui/command";
-import { useNavigate } from 'react-router-dom';
 
-const BRANDS = [
-  { name: "Baltic", country: "France" },
-  { name: "Brew", country: "USA" },
-  { name: "Farer", country: "UK" },
-  { name: "Halios", country: "Canada" },
-  { name: "Lorier", country: "USA" },
-  { name: "Monta", country: "USA" },
-  { name: "Autodromo", country: "USA" },
-  { name: "Kurono", country: "Japan" },
-  { name: "Anordain", country: "UK" },
-  { name: "Beaucroft", country: "Switzerland" },
-  { name: "Nivada Grenchen", country: "Switzerland" },
-  { name: "Norqain", country: "Switzerland" },
-  { name: "Rosenbusch", country: "Germany" }
-];
+// Empty brands array for clean slate
+const BRANDS: any[] = [];
 
 export function SearchCommand() {
   const [open, setOpen] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState("");
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -43,30 +27,8 @@ export function SearchCommand() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  const filteredBrands = BRANDS.filter(brand =>
-    brand.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   const handleSearch = (value: string) => {
     setSearchQuery(value);
-  };
-
-  const handleSelect = (brandName: string) => {
-    setOpen(false);
-    navigate(`/shop/${brandName.toLowerCase()}`);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && searchQuery.length >= 2) {
-      const matchingBrand = BRANDS.find(
-        brand => brand.name.toLowerCase() === searchQuery.toLowerCase()
-      );
-      
-      if (matchingBrand) {
-        setOpen(false);
-        navigate(`/shop/${matchingBrand.name.toLowerCase()}`);
-      }
-    }
   };
 
   return (
@@ -84,25 +46,9 @@ export function SearchCommand() {
           placeholder="Type a brand name..." 
           value={searchQuery}
           onValueChange={handleSearch}
-          onKeyDown={handleKeyDown}
         />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          {searchQuery.length > 0 && (
-            <CommandGroup heading="Suggestions">
-              {filteredBrands.map((brand) => (
-                <CommandItem
-                  key={brand.name}
-                  onSelect={() => handleSelect(brand.name)}
-                >
-                  <span>{brand.name}</span>
-                  <span className="ml-2 text-muted-foreground text-sm">
-                    {brand.country}
-                  </span>
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          )}
+          <CommandEmpty>No brands available.</CommandEmpty>
         </CommandList>
       </CommandDialog>
     </>

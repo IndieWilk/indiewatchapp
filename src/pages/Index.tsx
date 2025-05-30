@@ -27,12 +27,12 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link to="/shop">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button size="lg">
                 <ShoppingBag className="mr-2 h-5 w-5" /> Cool Watches
               </Button>
             </Link>
             <Link to="/community">
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+              <Button size="lg" variant="outline">
                 <MessageSquare className="mr-2 h-5 w-5" /> Join Community
               </Button>
             </Link>

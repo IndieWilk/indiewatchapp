@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,18 +26,18 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))", // Baby Blue
-          foreground: "hsl(var(--primary-foreground))", // Black text
-          50: "hsl(197, 89%, 96%)",   // Lightest Baby Blue
-          100: "hsl(197, 89%, 86%)",
-          200: "hsl(197, 89%, 76%)",
-          300: "hsl(197, 89%, 66%)",
-          400: "hsl(197, 89%, 56%)",  // Main Baby Blue
-          500: "hsl(197, 89%, 46%)",
-          600: "hsl(197, 89%, 36%)",
-          700: "hsl(197, 89%, 26%)",
-          800: "hsl(197, 89%, 16%)",
-          900: "hsl(197, 89%, 6%)",
+          DEFAULT: "hsl(var(--primary))", // Deep blue from logo
+          foreground: "hsl(var(--primary-foreground))",
+          50: "hsl(207, 67%, 95%)",   // Lightest blue
+          100: "hsl(207, 67%, 85%)",
+          200: "hsl(207, 67%, 75%)",
+          300: "hsl(207, 67%, 65%)",
+          400: "hsl(207, 67%, 55%)",
+          500: "hsl(207, 67%, 45%)",  // Logo blue
+          600: "hsl(207, 67%, 35%)",  // Main primary
+          700: "hsl(207, 67%, 25%)",
+          800: "hsl(207, 67%, 15%)",
+          900: "hsl(207, 67%, 10%)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -42,7 +43,7 @@ const MainNav = () => {
       <div className="container flex h-16 items-center">
         <Link to="/" className="flex items-center mr-6">
           <img 
-            src="/lovable-uploads/59c88d89-a2ae-40d0-9d1b-217d9abc6e61.png" 
+            src="/lovable-uploads/37155420-2ffd-40be-941a-952dc7243dad.png" 
             alt="IndieWatch Logo" 
             className="h-8 w-8 object-contain"
           />
@@ -145,3 +146,4 @@ const MainNav = () => {
 };
 
 export default MainNav;
+

@@ -51,11 +51,6 @@ const MainNav = () => {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/" className={navigationMenuTriggerStyle()}>
-                Discover
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
               <Link to="/shop" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
                 <ShoppingBag className="h-4 w-4" />
                 Shop

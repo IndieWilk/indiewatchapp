@@ -18,10 +18,9 @@ const MonthlyPrizePage = () => {
               <div className="flex flex-col items-center gap-4">
                 <img 
                   src="https://images.unsplash.com/photo-1547996160-81dfa6f585aa?q=80&w=500" 
-                  alt="Baltic Aquascaphe"
+                  alt="Monthly Prize Watch"
                   className="rounded-lg w-full max-w-[300px] shadow-lg"
                 />
-                <h3 className="text-xl font-bold text-[#1A1F2C]">Baltic Aquascaphe</h3>
               </div>
             </div>
           </CardContent>

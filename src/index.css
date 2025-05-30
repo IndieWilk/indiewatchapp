@@ -5,15 +5,15 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%; /* Very dark black background */
+    --background: 0 0% 2%; /* Deeper black background */
     --foreground: 204 100% 70%; /* Sky matte blue text */
     --primary: 0 0% 15%; /* Dark gray primary */
     --primary-foreground: 204 100% 70%; /* Sky matte blue text on primary */
     
-    --card: 0 0% 8%; /* Slightly lighter black for cards */
+    --card: 0 0% 4%; /* Deeper black for cards */
     --card-foreground: 204 100% 70%; /* Sky matte blue text on cards */
     
-    --popover: 0 0% 8%;
+    --popover: 0 0% 4%;
     --popover-foreground: 204 100% 70%; /* Sky matte blue text on popovers */
     
     --secondary: 0 0% 12%; /* Dark gray secondary */

@@ -9,7 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { User, ShoppingCart, Gift, Search, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
+import { User, ShoppingCart, Search, ShoppingBag, Users, Newspaper, Cog } from "lucide-react";
 import { SearchCommand } from "./SearchCommand";
 import Logo from "./Logo";
 import {
@@ -18,20 +18,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const MainNav = () => {
   const navigate = useNavigate();
-
-  // Empty cart for clean slate
-  const cartItems: any[] = [];
-
-  const calculatePrizeEntries = (total: number): number => {
-    return Math.floor(total / 100) * 5;
-  };
-
-  const totalEntries = cartItems.reduce((acc, item) => acc + calculatePrizeEntries(item.rrp), 0);
 
   return (
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -69,25 +59,7 @@ const MainNav = () => {
           </NavigationMenuList>
         </NavigationMenu>
         
-        <div className="flex items-center gap-2 ml-auto md:ml-6">
-          <Button 
-            variant="outline" 
-            className="gap-2 relative"
-            onClick={() => navigate('/monthly-prize')}
-          >
-            <Gift className="h-5 w-5" />
-            <span className="hidden lg:inline">Monthly Prize</span>
-            <Badge 
-              variant="secondary" 
-              className="absolute -top-2 -right-2 bg-blue-500 text-white hover:bg-blue-600"
-              title="Your prize draw entries"
-            >
-              {totalEntries}
-            </Badge>
-          </Button>
-        </div>
-        
-        <div className="flex items-center space-x-4 ml-4">
+        <div className="flex items-center space-x-4 ml-auto">
           <SearchCommand />
           
           <DropdownMenu>

@@ -60,6 +60,13 @@ const MainNav = () => {
         </NavigationMenu>
         
         <div className="flex items-center space-x-4 ml-auto">
+          <Button 
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+            onClick={() => navigate('/signin')}
+          >
+            Sign In
+          </Button>
+          
           <SearchCommand />
           
           <DropdownMenu>

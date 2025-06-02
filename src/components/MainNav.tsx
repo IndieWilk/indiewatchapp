@@ -61,7 +61,7 @@ const MainNav = () => {
         
         <div className="flex items-center space-x-4 ml-auto">
           <Button 
-            className="bg-primary-700 hover:bg-primary-800 text-white"
+            className="bg-gray-700 hover:bg-gray-600 text-foreground"
             onClick={() => navigate('/signin')}
           >
             Sign In
